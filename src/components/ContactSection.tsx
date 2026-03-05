@@ -33,11 +33,11 @@ const ContactSection = () => {
   const [copied, setCopied] = useState<string | null>(null);
   const { ref, isVisible } = useScrollReveal();
 
-  const handleCopy = (value: string) => {
-    navigator.clipboard.writeText(value);
-    setCopied(value);
-    setTimeout(() => setCopied(null), 2000);
-  };
+  const handleCopy = (value: string, label: string) => {
+  navigator.clipboard.writeText(value);
+  setCopied(label);
+  setTimeout(() => setCopied(null), 2000);
+};
 
   return (
     <section id="contact" className="py-28 border-t border-border relative overflow-hidden">
@@ -72,11 +72,11 @@ const ContactSection = () => {
                     <Icon size={18} className="text-muted-foreground group-hover:text-foreground transition-colors" />
                   </div>
                   <button
-                    onClick={() => handleCopy(value)}
+                    onClick={() => handleCopy(value, label)}
                     className="text-muted-foreground/30 hover:text-foreground transition-colors"
                     title="Copy"
                   >
-                    {copied === value ? (
+                    {copied === label ? (
                       <span className="text-xs font-mono text-terminal-green">Copied!</span>
                     ) : (
                       <Copy size={14} />
