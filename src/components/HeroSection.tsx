@@ -6,7 +6,7 @@ const titles = [
   "Computer Science Engineering Student",
   "Passionate Java Developer",
   "Focused on Data Structures & Algorithms",
-  "Future AI & ML Engineer",
+  "AI & ML Enthusiast",
 ];
 
 const HeroSection = () => {
