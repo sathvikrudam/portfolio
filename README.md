@@ -1,73 +1,150 @@
-# Welcome to your Lovable project
+# Sathvik Rudam – Developer Portfolio
 
-## Project info
+This is my personal developer portfolio website built using **React, TypeScript, and Tailwind CSS**.
+It showcases my projects, skills, education, and contact information.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The portfolio is designed with a **modern developer-style UI** and highlights my interest in **Software Development, Data Structures & Algorithms, and problem solving**.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🌐 Live Website
 
-**Use Lovable**
+Portfolio Link:
+https://sathvikrudam.lovable.app
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Features
 
-**Use your preferred IDE**
+* Modern developer-style UI
+* Responsive design for desktop and mobile
+* Sections for About, Education, Skills, Projects, and Contact
+* Smooth animations and scroll effects
+* Easy to customize and extend
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠 Tech Stack
 
-Follow these steps:
+This project is built using:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+* **React**
+* **TypeScript**
+* **Vite**
+* **Tailwind CSS**
+* **shadcn/ui**
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📂 Project Structure
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```
+aboutme
+│
+├── public
+│   ├── favicon.ico
+│   └── robots.txt
+│
+├── src
+│   ├── assets
+│   │   └── profile-photo.jpg
+│   │
+│   ├── components
+│   │   ├── AboutSection.tsx
+│   │   ├── ContactSection.tsx
+│   │   ├── EducationSection.tsx
+│   │   ├── HeroSection.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── ProjectsSection.tsx
+│   │   └── SkillsSection.tsx
+│   │
+│   ├── hooks
+│   ├── pages
+│   │   └── Index.tsx
+│   │
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── index.html
+├── package.json
+├── tailwind.config.ts
+└── vite.config.ts
+```
+
+---
+
+## 💻 Running the Project Locally
+
+Make sure **Node.js** is installed.
+
+Clone the repository:
+
+```
+git clone https://github.com/YOUR_USERNAME/portfolio.git
+```
+
+Navigate to the project directory:
+
+```
+cd portfolio
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run the development server:
+
+```
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open in browser:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+http://localhost:5173
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📦 Build for Production
 
-## What technologies are used for this project?
+To create an optimized production build:
 
-This project is built with:
+```
+npm run build
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The production files will be generated inside the `dist` folder.
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## ☁ Deployment
 
-## Can I connect a custom domain to my Lovable project?
+This project can be deployed easily using:
 
-Yes, you can!
+* **Vercel**
+* **Netlify**
+* **GitHub Pages**
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Recommended option: **Vercel** for automatic deployment from GitHub.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## 📬 Contact
+
+If you'd like to connect:
+
+* LinkedIn
+* GitHub
+* Email
+
+(All contact links are available on the portfolio website.)
+
+---
+
+## 📜 License
+
+This project is open source and available under the **MIT License**.
