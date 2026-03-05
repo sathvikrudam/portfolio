@@ -9,7 +9,6 @@ const projects = [
     tags: ["HTML", "CSS", "JavaScript", "Backend"],
     color: "from-muted-foreground/10 to-transparent",
     number: "01",
-    link: "https://github.com/sathvikrudam/GroceryApp"
   },
   {
     title: "AI Smart Answer Evaluation",
