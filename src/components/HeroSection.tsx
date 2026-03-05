@@ -152,12 +152,14 @@ const HeroSection = () => {
                 Contact Me
               </a>
               <a
-                href="#"
-                className="group border border-border px-7 py-3.5 rounded-full text-sm font-medium text-muted-foreground hover:bg-card hover:text-foreground hover:border-muted-foreground/30 transition-all duration-300 flex items-center gap-2"
-              >
-                <Download size={16} />
-                Resume
-              </a>
+  href="/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group border border-border px-7 py-3.5 rounded-full text-sm font-medium text-muted-foreground hover:bg-card hover:text-foreground hover:border-muted-foreground/30 transition-all duration-300 flex items-center gap-2"
+>
+  <Download size={16} />
+  Resume
+</a>
             </div>
 
             {/* Social links */}
