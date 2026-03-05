@@ -10,7 +10,7 @@ The portfolio is designed with a **modern developer-style UI** and highlights my
 ## 🌐 Live Website
 
 Portfolio Link:
-https://sathvikrudam.lovable.app
+https://sathvikrudam.vercel.app
 
 ---
 
