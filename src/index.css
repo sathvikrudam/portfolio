@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 3%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 60%;
+
+    --radius: 0.5rem;
+
+    --terminal-green: 120 60% 50%;
+    --terminal-amber: 45 100% 50%;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 0% 90%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Typewriter cursor */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink-cursor 1s step-end infinite;
+}
+
+/* Terminal glow */
+.terminal-glow {
+  box-shadow: 0 0 20px hsl(0 0% 100% / 0.05), inset 0 0 20px hsl(0 0% 100% / 0.02);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 5%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(0 0% 25%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(0 0% 35%);
+}
