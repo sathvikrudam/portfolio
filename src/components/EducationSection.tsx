@@ -7,7 +7,7 @@ const education = [
     institution: "Vardhaman College of Engineering",
     detail: "CGPA: 9.39",
     period: "2023 – 2027 (Expected)",
-    status: "Semester 5 · Ongoing",
+    status: "Semester 6 · Ongoing",
     highlight: true,
   },
   {
