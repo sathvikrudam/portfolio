@@ -48,7 +48,7 @@ const ContactSection = () => {
           <div className="flex items-center gap-3 mb-3">
             <MessageSquare size={16} className="text-terminal-green" />
             <p className="font-mono text-sm text-muted-foreground">
-              <span className="text-terminal-green">06.</span> contact
+              <span className="text-terminal-green">07.</span> contact
             </p>
           </div>
           <h2 className="font-display text-4xl md:text-6xl font-black mb-4">
