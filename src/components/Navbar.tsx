@@ -45,7 +45,7 @@ const Navbar = () => {
 </div>
 
         {/* Mobile toggle */}
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
   <ThemeToggle />
   <button
     onClick={() => setOpen(!open)}
@@ -69,7 +69,7 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <div className="flex justify-center py-2"><ThemeToggle /></div>
+
           <a
             href="#contact"
             onClick={() => setOpen(false)}
