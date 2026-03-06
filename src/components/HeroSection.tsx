@@ -66,12 +66,14 @@ const HeroSection = () => {
       />
 
       {/* Grid pattern overlay */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(hsl(0 0% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 50%) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
+      <div
+  className="pointer-events-none absolute inset-0 opacity-[0.03] transition-transform duration-500 ease-out"
+  style={{
+    backgroundImage: `linear-gradient(hsl(0 0% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 50%) 1px, transparent 1px)`,
+    backgroundSize: "60px 60px",
+    transform: `translate(${mousePos.x * 0.02}px, ${mousePos.y * 0.02}px)`
+  }}
+/>
 
       {/* Floating particles */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
