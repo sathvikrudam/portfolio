@@ -104,9 +104,10 @@
   box-shadow: 0 0 20px hsl(0 0% 100% / 0.05), inset 0 0 20px hsl(0 0% 100% / 0.02);
 }
 
-/* Smooth scroll */
+/* Smooth scroll + theme transition */
 html {
   scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Scrollbar styling */
