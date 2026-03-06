@@ -41,44 +41,48 @@ export default function CertificationsSection() {
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
 
           {certifications.map((cert, i) => (
-            <a
-              key={i}
-              href={cert.link}
-              target="_blank"
-              className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-muted-foreground/30 transition-all duration-700 hover:-translate-y-1"
-            >
+  <div
+    key={i}
+    className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-muted-foreground/30 transition-all duration-700 hover:-translate-y-1"
+  >
 
-              {/* Hover Gradient Accent */}
-              <div className="absolute inset-0 bg-gradient-to-r from-muted-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+    {/* Hover Gradient Accent */}
+    <div className="absolute inset-0 bg-gradient-to-r from-muted-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-              {/* Content */}
-              <div className="relative flex items-center justify-between p-8">
+    {/* Content */}
+    <div className="relative flex items-center justify-between p-8">
 
-                {/* Certificate Info */}
-                <div className="flex flex-col gap-2">
+      {/* Certificate Info */}
+      <div className="flex flex-col gap-2">
 
-                  <h3 className="font-display font-bold text-xl text-foreground group-hover:text-foreground transition-colors">
-                    {cert.name}
-                  </h3>
+        <h3 className="font-display font-bold text-xl text-foreground group-hover:text-foreground transition-colors">
+          {cert.name}
+        </h3>
 
-                  <p className="text-sm text-muted-foreground">
-                    {cert.issuer}
-                  </p>
+        <p className="text-sm text-muted-foreground">
+          {cert.issuer}
+        </p>
 
-                  <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors mt-2">
-                    View Certificate →
-                  </span>
+        {/* ONLY clickable link */}
+        <a
+          href={cert.link}
+          target="_blank"
+          className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mt-2 inline-block"
+        >
+          View Certificate →
+        </a>
 
-                </div>
+      </div>
 
-                {/* Arrow */}
-                <span className="text-muted-foreground group-hover:text-foreground transition-all duration-300 group-hover:translate-x-1 text-xl">
-                  ↗
-                </span>
+      {/* Arrow */}
+      <span className="text-muted-foreground group-hover:text-foreground transition-all duration-300 group-hover:translate-x-1 text-xl">
+        ↗
+      </span>
 
-              </div>
+    </div>
 
-            </a>
+  </div>
+))}
           ))}
 
         </div>
