@@ -37,8 +37,8 @@ export default function CertificationsSection() {
               target="_blank"
               className="border border-border rounded-xl p-6 hover:bg-muted transition"
             >
-              <h3 className="font-semibold">{cert.name}</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="font-semibold text-lg">{cert.name}</h3>
+              <p className="text-sm text-muted-foreground mt-1">
                 {cert.issuer}
               </p>
               <span className="text-sm mt-2 inline-block">
