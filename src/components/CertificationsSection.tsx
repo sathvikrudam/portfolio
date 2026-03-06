@@ -3,20 +3,16 @@ import { Award } from "lucide-react";
 export default function CertificationsSection() {
   const certifications = [
     {
-      name: "Java Programming",
-      issuer: "Coursera",
-      link: "/certificates/java.pdf",
+      name: "Agentforce Specialist",
+      issuer: "Salesforce",
+      link: "/certificates/salesforce.pdf",
     },
     {
-      name: "Python Programming",
-      issuer: "Coursera",
-      link: "/certificates/python.pdf",
+      name: "MongoDB",
+      issuer: "GeeksforGeeks",
+      link: "/certificates/mongodb.pdf",
     },
-    {
-      name: "Google Cloud Fundamentals",
-      issuer: "Google",
-      link: "/certificates/cloud.pdf",
-    },
+    
   ];
 
   return (
