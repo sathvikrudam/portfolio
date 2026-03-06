@@ -45,12 +45,15 @@ const Navbar = () => {
 </div>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-foreground"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+  <ThemeToggle />
+  <button
+    onClick={() => setOpen(!open)}
+    className="text-foreground"
+  >
+    {open ? <X size={24} /> : <Menu size={24} />}
+  </button>
+</div>
       </div>
 
       {/* Mobile menu */}
