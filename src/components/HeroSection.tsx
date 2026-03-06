@@ -192,33 +192,33 @@ const HeroSection = () => {
               </a>
             </div>
           </div>
-{/*    
-          
+
+          {/* Profile photo with enhanced styling */}
           <div
             className="flex-shrink-0 animate-fade-in-up"
             style={{ animationDelay: "0.4s", opacity: 0 }}
           >
             <div className="relative group">
-              
+              {/* Outer glow ring */}
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-muted-foreground/10 via-transparent to-muted-foreground/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
 
-              
+              {/* Photo container */}
               <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border border-border group-hover:border-muted-foreground/30 transition-all duration-500">
                 <img
                   src={profilePhoto}
                   alt="Sathvik Rudam - Computer Science Student"
                   className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
                 />
-                
+                {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               </div>
 
-              
+              {/* Floating tag */}
               <div className="absolute -bottom-3 -right-3 bg-card border border-border rounded-xl px-4 py-2 font-mono text-xs text-muted-foreground shadow-lg backdrop-blur-sm">
                 <span className="text-terminal-green">●</span> java dev
               </div>
 
-              
+              {/* Stats tag */}
               <div className="absolute -top-3 -left-3 bg-card border border-border rounded-xl px-4 py-2 font-mono text-xs shadow-lg backdrop-blur-sm">
                 <span className="text-foreground font-bold">O</span>
                 <span className="text-muted-foreground ml-1">+ve</span>
@@ -226,7 +226,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-*/}
+
         
       </div>
 
