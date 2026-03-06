@@ -215,13 +215,13 @@ const HeroSection = () => {
 
               {/* Floating tag */}
               <div className="absolute -bottom-3 -right-3 bg-card border border-border rounded-xl px-4 py-2 font-mono text-xs text-muted-foreground shadow-lg backdrop-blur-sm">
-                <span className="text-terminal-green">●</span> sathvik.dev
+                <span className="text-terminal-green">●</span> java dev
               </div>
 
               {/* Stats tag */}
               <div className="absolute -top-3 -left-3 bg-card border border-border rounded-xl px-4 py-2 font-mono text-xs shadow-lg backdrop-blur-sm">
-                <span className="text-foreground font-bold">9.39</span>
-                <span className="text-muted-foreground ml-1">CGPA</span>
+                <span className="text-foreground font-bold">O</span>
+                <span className="text-muted-foreground ml-1">+ve</span>
               </div>
             </div>
           </div>
