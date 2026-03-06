@@ -11,6 +11,8 @@
   --background: 0 0% 100%;
   --foreground: 240 10% 4%;
 
+  --terminal-green: 142 72% 50%;
+
   --card: 0 0% 100%;
   --card-foreground: 240 10% 4%;
 
@@ -38,6 +40,8 @@
   /* DARK MODE */
   --background: 0 0% 3%;
   --foreground: 0 0% 95%;
+
+  --terminal-green: 142 72% 50%;
 
   --card: 0 0% 7%;
   --card-foreground: 0 0% 95%;
