@@ -93,7 +93,7 @@ const HeroSection = () => {
           {/* Text content */}
           <div className="flex-1 space-y-8">
             {/* Status badge */}
-            <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 animate-fade-in-up shadow-lg backdrop-blur-sm ring-1 ring-black/10 dark:ring-white/10">
+            <div className="inline-flex items-center gap-2 bg-card/80 border border-border rounded-full px-4 py-2 animate-fade-in-up shadow-lg backdrop-blur-sm ring-1 ring-black/10 dark:ring-white/10">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-terminal-green opacity-75 animate-ping" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-terminal-green" />
