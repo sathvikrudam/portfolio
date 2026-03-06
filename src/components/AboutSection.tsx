@@ -43,9 +43,9 @@ const AboutSection = () => {
             {/* Terminal-style about block */}
             <div className="bg-card border border-border rounded-2xl overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-muted/30">
-                <span className="w-3 h-3 rounded-full bg-destructive/60" />
-                <span className="w-3 h-3 rounded-full bg-terminal-amber/60" />
-                <span className="w-3 h-3 rounded-full bg-terminal-green/60" />
+                <span className="w-3 h-3 rounded-full bg-red-500" />
+<span className="w-3 h-3 rounded-full bg-yellow-400" />
+<span className="w-3 h-3 rounded-full bg-green-500" />
                 <span className="font-mono text-xs text-muted-foreground ml-2">about.md</span>
               </div>
               <div className="p-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
