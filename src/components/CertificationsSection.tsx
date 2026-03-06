@@ -64,22 +64,18 @@ export default function CertificationsSection() {
         </p>
 
         {/* ONLY clickable link */}
-        <a
-          href={cert.link}
-          target="_blank"
-          className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mt-2 inline-block"
-        >
-          View Certificate →
-        </a>
+<a
+  href={cert.link}
+  target="_blank"
+  className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mt-2"
+>
+  View Certificate →
+  <span className="text-base">↗</span>
+</a>
 
       </div>
 
-      {/* Arrow */}
-      <span className="text-muted-foreground group-hover:text-foreground transition-all duration-300 group-hover:translate-x-1 text-xl">
-        ↗
-      </span>
-
-    </div>
+          </div>
 
   </div>
 ))}
