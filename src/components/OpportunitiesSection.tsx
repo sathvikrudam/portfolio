@@ -20,7 +20,7 @@ const OpportunitiesSection = () => {
           <div className="inline-flex items-center gap-3 mb-3">
             <Briefcase size={16} className="text-terminal-green" />
             <p className="font-mono text-sm text-muted-foreground">
-              <span className="text-terminal-green">05.</span> opportunities
+              <span className="text-terminal-green">06.</span> opportunities
             </p>
           </div>
 
