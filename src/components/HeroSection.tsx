@@ -104,7 +104,7 @@ const HeroSection = () => {
             {/* Terminal greeting */}
             <div className="animate-fade-in-up" style={{ animationDelay: "0.2s", opacity: 0 }}>
               <p className="text-sm text-muted-foreground font-mono mb-4">
-                <span className="text-terminal-green">$</span> whoami
+                <span className="text-green-600 dark:text-green-400 drop-shadow-[0_0_6px_rgba(34,197,94,0.9)]">$</span> whoami
               </p>
 
               <h1 className="font-display text-6xl md:text-8xl font-black tracking-tight leading-[0.95]">
