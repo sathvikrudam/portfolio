@@ -1,3 +1,5 @@
+import { Award } from "lucide-react";
+
 export default function CertificationsSection() {
   const certifications = [
     {
@@ -25,11 +27,14 @@ export default function CertificationsSection() {
       <div className="container mx-auto px-6 relative z-10">
 
         {/* Section Label */}
-        <div className="flex items-center gap-3 mb-3">
-          <p className="font-mono text-sm text-muted-foreground">
-            <span className="text-terminal-green">05.</span> certifications
-          </p>
-        </div>
+        {/* Section Label */}
+<div className="flex items-center gap-3 mb-3">
+  <Award size={16} className="text-terminal-green" />
+
+  <p className="font-mono text-sm text-muted-foreground">
+    <span className="text-terminal-green">05.</span> certifications
+  </p>
+</div>
 
         {/* Section Title */}
         <h2 className="font-display text-4xl md:text-6xl font-black mb-16">
@@ -37,7 +42,7 @@ export default function CertificationsSection() {
         </h2>
 
         {/* Certificates List */}
-        <div className="space-y-6 max-w-4xl">
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
 
           {certifications.map((cert, i) => (
             <a
