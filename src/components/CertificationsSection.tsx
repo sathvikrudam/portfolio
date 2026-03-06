@@ -18,34 +18,68 @@ export default function CertificationsSection() {
   ];
 
   return (
-    <section id="certifications" className="py-32">
-      <div className="container mx-auto px-6">
+    <section
+      id="certifications"
+      className="py-28 border-t border-border relative overflow-hidden"
+    >
+      <div className="container mx-auto px-6 relative z-10">
 
-        <p className="text-sm font-mono text-muted-foreground mb-2">
-          05. certifications
-        </p>
+        {/* Section Label */}
+        <div className="flex items-center gap-3 mb-3">
+          <p className="font-mono text-sm text-muted-foreground">
+            <span className="text-terminal-green">05.</span> certifications
+          </p>
+        </div>
 
-        <h2 className="text-5xl font-bold tracking-tight mb-16">
-          Certifications.
+        {/* Section Title */}
+        <h2 className="font-display text-4xl md:text-6xl font-black mb-16">
+          Certifications<span className="text-muted-foreground">.</span>
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Certificates List */}
+        <div className="space-y-6 max-w-4xl">
+
           {certifications.map((cert, i) => (
             <a
               key={i}
               href={cert.link}
               target="_blank"
-              className="border border-border rounded-2xl p-8 hover:bg-muted hover:scale-[1.02] hover:shadow-md transition"
+              className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-muted-foreground/30 transition-all duration-700 hover:-translate-y-1"
             >
-              <h3 className="text-xl font-semibold tracking-tight">{cert.name}</h3>
-              <p className="text-sm text-muted-foreground mt-2">
-                {cert.issuer}
-              </p>
-              <span className="text-sm mt-4 inline-block font-medium">
-                View Certificate →
-              </span>
+
+              {/* Hover Gradient Accent */}
+              <div className="absolute inset-0 bg-gradient-to-r from-muted-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              {/* Content */}
+              <div className="relative flex items-center justify-between p-8">
+
+                {/* Certificate Info */}
+                <div className="flex flex-col gap-2">
+
+                  <h3 className="font-display font-bold text-xl text-foreground group-hover:text-foreground transition-colors">
+                    {cert.name}
+                  </h3>
+
+                  <p className="text-sm text-muted-foreground">
+                    {cert.issuer}
+                  </p>
+
+                  <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors mt-2">
+                    View Certificate →
+                  </span>
+
+                </div>
+
+                {/* Arrow */}
+                <span className="text-muted-foreground group-hover:text-foreground transition-all duration-300 group-hover:translate-x-1 text-xl">
+                  ↗
+                </span>
+
+              </div>
+
             </a>
           ))}
+
         </div>
 
       </div>
