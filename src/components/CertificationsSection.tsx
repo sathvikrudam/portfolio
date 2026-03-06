@@ -22,7 +22,7 @@ export default function CertificationsSection() {
       <div className="container mx-auto px-6">
 
         <p className="text-sm font-mono text-muted-foreground mb-2">
-          04. certifications
+          05. certifications
         </p>
 
         <h2 className="text-4xl font-bold mb-12">
