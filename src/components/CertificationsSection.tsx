@@ -35,7 +35,7 @@ export default function CertificationsSection() {
               key={i}
               href={cert.link}
               target="_blank"
-              className="border border-border rounded-xl p-6 hover:bg-muted transition"
+              className="border border-border rounded-xl p-6 hover:bg-muted hover:scale-[1.02] hover:shadow-md transition"
             >
               <h3 className="font-semibold text-lg">{cert.name}</h3>
               <p className="text-sm text-muted-foreground mt-1">
