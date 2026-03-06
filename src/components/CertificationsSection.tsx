@@ -67,6 +67,7 @@ export default function CertificationsSection() {
 <a
   href={cert.link}
   target="_blank"
+rel="noopener noreferrer"
   className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mt-2"
 >
   View Certificate →
