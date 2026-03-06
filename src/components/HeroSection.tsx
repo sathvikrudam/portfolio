@@ -55,10 +55,14 @@ const HeroSection = () => {
     >
       {/* Animated gradient background */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-30 transition-all duration-700 ease-out"
+        className="pointer-events-none absolute inset-0 opacity-30 blur-2xl transition-all duration-700 ease-out"
         style={{
-          background: `radial-gradient(800px circle at ${mousePos.x}% ${mousePos.y}%, hsl(0 0% 20%), transparent 50%)`,
-        }}
+  background: `radial-gradient(
+    220px circle at ${mousePos.x}% ${mousePos.y}%,
+    hsla(0,0%,20%,0.25),
+    transparent 65%
+  )`,
+}}
       />
 
       {/* Grid pattern overlay */}
@@ -74,7 +78,7 @@ const HeroSection = () => {
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 rounded-full bg-muted-foreground/20"
+            className="absolute w-1 h-1 rounded-full bg-muted-foreground/10"
             style={{
               left: `${15 + i * 18}%`,
               top: `${20 + i * 12}%`,
