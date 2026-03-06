@@ -55,7 +55,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-background border-b border-border px-6 pb-6 space-y-4">
+        <div className="md:hidden bg-background/80 backdrop-blur-md border-b border-border px-6 pb-6 space-y-4 shadow-lg rounded-b-2xl">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -66,6 +66,7 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <div className="flex justify-center py-2"><ThemeToggle /></div>
           <a
             href="#contact"
             onClick={() => setOpen(false)}
