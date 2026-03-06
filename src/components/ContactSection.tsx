@@ -98,18 +98,20 @@ const ContactSection = () => {
                   </div>
 
                   <button
-                    onClick={() => handleCopy(value, label)}
-                    className="text-muted-foreground/30 hover:text-foreground transition-colors"
-                    title="Copy"
-                  >
-                    {copied === label ? (
-                      <span className="text-xs font-mono text-terminal-green animate-pulse">
-                        ✓ copied
-                      </span>
-                    ) : (
-                      <Copy size={14} />
-                    )}
-                  </button>
+  onClick={() => handleCopy(value, label)}
+  className={`transition-colors ${
+    copied === label
+      ? "text-terminal-green"
+      : "text-muted-foreground/30 hover:text-foreground"
+  }`}
+  title="Copy"
+>
+  {copied === label ? (
+    <span className="text-xs font-mono">✓ copied</span>
+  ) : (
+    <Copy size={14} />
+  )}
+</button>
 
                 </div>
 
