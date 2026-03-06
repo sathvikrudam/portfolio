@@ -5,7 +5,7 @@ const roles = [
   { title: "Java Developer", icon: "☕" },
   { title: "Software Developer", icon: "💻" },
   { title: "Backend Developer", icon: "⚙️" },
-  { title: "Software Engineer", icon: "🚀" },
+  { title: "Frontend Developer", icon: "🚀" },
 ];
 
 const OpportunitiesSection = () => {
