@@ -47,7 +47,7 @@ const codingProfiles = [
   },
   {
     name: "CodeChef",
-    username: "sathvikrudam",
+    username: "stvk_rdm",
     link: "https://www.codechef.com/users/stvk_rdm",
   },
   {
@@ -57,7 +57,7 @@ const codingProfiles = [
   },
   {
     name: "GeeksforGeeks",
-    username: "sathvikrudam",
+    username: "stvk_rdm",
     link: "https://www.geeksforgeeks.org/profile/stvk_rdm",
   },
   {
