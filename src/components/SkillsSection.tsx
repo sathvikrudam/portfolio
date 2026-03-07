@@ -163,11 +163,17 @@ const SkillsSection = () => {
             <div className="bg-card border border-border rounded-2xl p-6 relative
             before:absolute before:inset-0 before:bg-terminal-green/5 before:blur-2xl before:-z-10">
 
-              <div className="flex items-center justify-between pb-3 mb-4 border-b border-border">
-  <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
-    Coding Profiles
-  </h3>
-</div>
+              <div className="bg-card border border-border rounded-2xl overflow-hidden relative">
+
+  {/* Header */}
+  <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-muted/20">
+    <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+      Coding Profiles
+    </h3>
+  </div>
+
+  {/* Profiles */}
+  <div className="p-6 space-y-3">
 
               <div className="space-y-3">
                 {codingProfiles.map((profile, index) => (
