@@ -163,9 +163,11 @@ const SkillsSection = () => {
             <div className="bg-card border border-border rounded-2xl p-6 relative
             before:absolute before:inset-0 before:bg-terminal-green/5 before:blur-2xl before:-z-10">
 
-              <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider mb-4">
-                Coding Profiles
-              </h3>
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-border">
+  <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+    Coding Profiles
+  </h3>
+</div>
 
               <div className="space-y-3">
                 {codingProfiles.map((profile, index) => (
