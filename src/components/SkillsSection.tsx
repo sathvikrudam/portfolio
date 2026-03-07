@@ -71,8 +71,11 @@ const SkillsSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="skills" className="py-28 border-t border-border relative overflow-hidden">
-      
+    <section
+      id="skills"
+      className="py-28 border-t border-border relative overflow-hidden"
+    >
+      {/* background glow */}
       <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-muted/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
       <div ref={ref} className="container mx-auto px-6 relative z-10">
@@ -103,17 +106,18 @@ const SkillsSection = () => {
             {skillGroups.map((group, gi) => (
               <div
                 key={group.title}
-                className={`bg-card border border-border rounded-2xl overflow-hidden hover:border-muted-foreground/30 transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
+                className={`bg-card border border-border rounded-2xl overflow-hidden
+                hover:border-muted-foreground/30 hover:shadow-[0_0_20px_rgba(34,197,94,0.12)]
+                transition-all duration-700
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: `${(gi + 2) * 150}ms` }}
               >
-
                 {/* Card Header */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-muted/20">
                   <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
                     {group.title}
                   </h3>
+
                   <span className="font-mono text-xs text-muted-foreground/50">
                     {group.icon}
                   </span>
@@ -123,7 +127,6 @@ const SkillsSection = () => {
                 <div className="p-6 space-y-5">
                   {group.skills.map((skill) => (
                     <div key={skill.name}>
-
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm text-foreground font-medium">
                           {skill.name}
@@ -143,34 +146,40 @@ const SkillsSection = () => {
                           }}
                         />
                       </div>
-
                     </div>
                   ))}
                 </div>
-
               </div>
             ))}
           </div>
 
           {/* Coding Profiles */}
-          <div className="space-y-4">
-
-            <div className="bg-card border border-border rounded-2xl p-6">
+          <div
+            className={`space-y-4 transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: "700ms" }}
+          >
+            <div className="bg-card border border-border rounded-2xl p-6 relative
+            before:absolute before:inset-0 before:bg-terminal-green/5 before:blur-2xl before:-z-10">
 
               <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider mb-4">
                 Coding Profiles
               </h3>
 
               <div className="space-y-3">
-                {codingProfiles.map((profile) => (
+                {codingProfiles.map((profile, index) => (
                   <a
                     key={profile.name}
                     href={profile.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl border border-border hover:border-muted-foreground/30 hover:bg-muted/20 transition-all"
+                    className="flex items-center justify-between p-3 rounded-xl border border-border
+                    hover:border-muted-foreground/30 hover:bg-muted/20
+                    hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
+                    transition-all duration-500"
+                    style={{ transitionDelay: `${index * 100}ms` }}
                   >
-
                     <span className="text-sm font-medium">
                       {profile.name}
                     </span>
@@ -178,13 +187,11 @@ const SkillsSection = () => {
                     <span className="text-xs text-muted-foreground font-mono">
                       {profile.username}
                     </span>
-
                   </a>
                 ))}
               </div>
 
             </div>
-
           </div>
 
         </div>
