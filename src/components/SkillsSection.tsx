@@ -48,17 +48,17 @@ const codingProfiles = [
   {
     name: "CodeChef",
     username: "sathvikrudam",
-    link: "https://www.codechef.com/users/sathvikrudam",
+    link: "https://www.codechef.com/users/stvk_rdm",
   },
   {
     name: "HackerRank",
     username: "sathvikrudam",
-    link: "https://www.hackerrank.com/sathvikrudam",
+    link: "https://www.hackerrank.com/profile/sathvikrudam",
   },
   {
     name: "GeeksforGeeks",
     username: "sathvikrudam",
-    link: "https://auth.geeksforgeeks.org/user/sathvikrudam",
+    link: "https://www.geeksforgeeks.org/profile/stvk_rdm",
   },
   {
     name: "Codeforces",
