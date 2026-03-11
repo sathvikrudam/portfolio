@@ -47,8 +47,8 @@ const ContactSection = () => {
       await navigator.clipboard.writeText(value);
       setCopied(label);
       setTimeout(() => setCopied(null), 2000);
-    } catch (err) {
-      console.error("Copy failed", err);
+    } catch {
+      console.error("Copy failed");
     }
   };
 
@@ -69,14 +69,8 @@ const ContactSection = () => {
       });
 
       if (res.ok) {
-
         setStatus("Message sent successfully!");
-
-        setForm({
-          name: "",
-          email: "",
-          message: "",
-        });
+        setForm({ name: "", email: "", message: "" });
 
         setTimeout(() => setStatus(""), 4000);
 
@@ -99,7 +93,7 @@ const ContactSection = () => {
 
       <div ref={ref} className="container mx-auto px-6 relative z-10">
 
-        {/* Header */}
+        {/* HEADER */}
 
         <div
           className={`transition-all duration-700 ${
@@ -129,10 +123,10 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
 
-          {/* CONTACT CARDS */}
+          {/* CONTACT LIST */}
 
           <div
-            className={`grid grid-cols-2 gap-4 transition-all duration-700 delay-200 ${
+            className={`grid grid-cols-1 gap-4 transition-all duration-700 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -141,46 +135,46 @@ const ContactSection = () => {
 
               <div
                 key={label}
-                className="group bg-card border border-border rounded-2xl p-5 hover:border-muted-foreground/30 hover:-translate-y-1 transition-all duration-300"
+                className="flex items-center justify-between bg-card border border-border rounded-xl px-5 py-4 hover:border-muted-foreground/30 hover:-translate-y-1 transition-all duration-300"
               >
 
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-4">
 
-                  <div className="w-10 h-10 rounded-xl bg-muted/50 flex items-center justify-center group-hover:bg-muted transition-colors">
-                    <Icon
-                      size={18}
-                      className="text-muted-foreground group-hover:text-foreground transition-colors"
-                    />
+                  <div className="w-10 h-10 rounded-lg bg-muted/40 flex items-center justify-center">
+                    <Icon size={18} className="text-muted-foreground" />
                   </div>
 
-                  <button
-                    onClick={() => handleCopy(value, label)}
-                    className="transition-colors"
-                    title="Copy"
-                  >
-                    {copied === label ? (
-                      <span className="text-xs font-mono text-terminal-green animate-pulse">
-                        ✓ Copied
-                      </span>
-                    ) : (
-                      <Copy size={14} />
-                    )}
-                  </button>
+                  <div>
+
+                    <p className="text-xs text-muted-foreground font-mono">
+                      {label}
+                    </p>
+
+                    <a
+                      href={href}
+                      target={href.startsWith("http") ? "_blank" : undefined}
+                      rel="noopener noreferrer"
+                      className="text-sm text-foreground font-medium hover:underline"
+                    >
+                      {value}
+                    </a>
+
+                  </div>
 
                 </div>
 
-                <p className="text-xs text-muted-foreground font-mono mb-1">
-                  {label}
-                </p>
-
-                <a
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  className="text-sm text-foreground font-medium hover:underline truncate block"
+                <button
+                  onClick={() => handleCopy(value, label)}
+                  className="opacity-70 hover:opacity-100 transition"
                 >
-                  {value}
-                </a>
+                  {copied === label ? (
+                    <span className="text-xs font-mono text-terminal-green">
+                      ✓
+                    </span>
+                  ) : (
+                    <Copy size={14} />
+                  )}
+                </button>
 
               </div>
 
@@ -190,11 +184,7 @@ const ContactSection = () => {
 
           {/* QUICK EMAIL */}
 
-          <div
-            className={`flex flex-col justify-center transition-all duration-700 delay-400 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
+          <div className="flex flex-col justify-center">
 
             <div className="bg-card border border-border rounded-2xl p-8">
 
@@ -216,9 +206,6 @@ const ContactSection = () => {
               >
                 <Mail size={16} />
                 Send Email
-                <span className="group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
               </a>
 
             </div>
@@ -227,13 +214,9 @@ const ContactSection = () => {
 
           {/* CONTACT FORM */}
 
-          <div
-            className={`transition-all duration-700 delay-500 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
+          <div>
 
-            <div className="bg-card/60 backdrop-blur-xl border border-border rounded-2xl p-8 shadow-xl hover:shadow-[0_0_40px_hsl(0_0%_100%/0.06)] transition-all">
+            <div className="bg-card/60 backdrop-blur-xl border border-border rounded-2xl p-8 shadow-xl">
 
               <div className="flex items-center gap-2 mb-6">
                 <Send size={18} className="text-terminal-green" />
@@ -251,7 +234,7 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setForm({ ...form, name: e.target.value })
                   }
-                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green transition-all"
+                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
                   required
                 />
 
@@ -262,7 +245,7 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setForm({ ...form, email: e.target.value })
                   }
-                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green transition-all"
+                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
                   required
                 />
 
@@ -273,14 +256,14 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setForm({ ...form, message: e.target.value })
                   }
-                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green transition-all resize-none"
+                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green resize-none"
                   required
                 />
 
                 <button
                   type="submit"
                   disabled={status === "Sending..."}
-                  className="w-full flex items-center justify-center gap-2 bg-terminal-green text-black py-3 rounded-lg text-sm font-semibold hover:scale-[1.02] hover:shadow-[0_0_25px_hsl(140_100%_40%/0.6)] transition-all duration-300 disabled:opacity-50"
+                  className="w-full flex items-center justify-center gap-2 bg-terminal-green text-black py-3 rounded-lg text-sm font-semibold hover:scale-[1.02] hover:shadow-[0_0_25px_hsl(140_100%_40%/0.6)] transition-all disabled:opacity-50"
                 >
                   <Send size={16} />
                   {status === "Sending..." ? "Sending..." : "Send Message"}
