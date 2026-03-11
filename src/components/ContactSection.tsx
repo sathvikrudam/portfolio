@@ -75,7 +75,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-4xl">
+        <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
 
           {/* Contact Cards */}
           <div
