@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
-// import profilePhoto from "@/assets/profile-photo.jpg";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const titles = [
   "Computer Science Engineering Student",
