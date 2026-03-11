@@ -2,11 +2,17 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 
-const theme = localStorage.getItem("theme") || "dark";
+const savedTheme = localStorage.getItem("theme");
 
-if (theme === "dark") {
+// If user never selected theme → force dark
+if (!savedTheme) {
+  localStorage.setItem("theme", "dark");
   document.documentElement.classList.add("dark");
-} else {
+} 
+else if (savedTheme === "dark") {
+  document.documentElement.classList.add("dark");
+} 
+else {
   document.documentElement.classList.remove("dark");
 }
 
