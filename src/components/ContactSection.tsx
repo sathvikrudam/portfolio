@@ -43,16 +43,25 @@ const ContactSection = () => {
   const [status, setStatus] = useState("");
 
   const handleCopy = async (value: string, label: string) => {
+
     try {
+
       await navigator.clipboard.writeText(value);
+
       setCopied(label);
-      setTimeout(() => setCopied(null), 2000);
+
+      setTimeout(() => {
+        setCopied(null);
+      }, 2000);
+
     } catch {
       console.error("Copy failed");
     }
+
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+
     e.preventDefault();
 
     if (status === "Sending...") return;
@@ -60,6 +69,7 @@ const ContactSection = () => {
     setStatus("Sending...");
 
     try {
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -69,9 +79,17 @@ const ContactSection = () => {
       });
 
       if (res.ok) {
+
         setStatus("Message sent successfully!");
-        setForm({ name: "", email: "", message: "" });
+
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+
         setTimeout(() => setStatus(""), 4000);
+
       } else {
         setStatus("Failed to send message.");
       }
@@ -79,9 +97,11 @@ const ContactSection = () => {
     } catch {
       setStatus("Server error. Try again.");
     }
+
   };
 
   return (
+
     <section
       id="contact"
       className="py-28 border-t border-border relative overflow-hidden"
@@ -110,7 +130,7 @@ const ContactSection = () => {
             Get in Touch<span className="text-muted-foreground">.</span>
           </h2>
 
-          <p className="text-muted-foreground text-sm md:text-base max-w-lg mb-12">
+          <p className="text-muted-foreground text-sm md:text-base max-w-xl mb-12">
             Interested in working together or have a question? Feel free to reach
             out through any of these channels.
           </p>
@@ -119,7 +139,7 @@ const ContactSection = () => {
 
         {/* GRID */}
 
-        <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
+        <div className="grid lg:grid-cols-[1fr_1.2fr_1fr] gap-12 w-full">
 
           {/* CONTACT CARDS */}
 
@@ -136,32 +156,36 @@ const ContactSection = () => {
                 className="relative bg-card border border-border rounded-2xl p-6 h-[140px] hover:border-muted-foreground/40 hover:-translate-y-1 transition-all duration-300"
               >
 
-                {/* Copy button */}
+                {/* COPY BUTTON */}
 
                 <button
                   onClick={() => handleCopy(value, label)}
-                  className="absolute top-4 right-4 opacity-60 hover:opacity-100"
+                  className="absolute top-4 right-4 text-xs text-muted-foreground hover:text-foreground"
                 >
+
                   {copied === label ? (
-                    <span className="text-xs text-terminal-green font-mono">✓</span>
+                    <span className="text-terminal-green font-mono text-xs">
+                      Copied
+                    </span>
                   ) : (
                     <Copy size={14} />
                   )}
+
                 </button>
 
-                {/* Icon */}
+                {/* ICON */}
 
                 <div className="w-10 h-10 rounded-xl bg-muted/40 flex items-center justify-center mb-4">
                   <Icon size={18} className="text-muted-foreground" />
                 </div>
 
-                {/* Label */}
+                {/* LABEL */}
 
                 <p className="text-xs text-muted-foreground font-mono mb-1">
                   {label}
                 </p>
 
-                {/* Value */}
+                {/* VALUE */}
 
                 <a
                   href={href}
@@ -178,11 +202,11 @@ const ContactSection = () => {
 
           </div>
 
-          {/* QUICK EMAIL */}
+          {/* QUICK MESSAGE */}
 
-          <div className="flex flex-col justify-center">
+          <div className="flex items-center">
 
-            <div className="bg-card border border-border rounded-2xl p-8">
+            <div className="bg-card border border-border rounded-2xl p-8 w-full">
 
               <div className="flex items-center gap-2 mb-4">
                 <Send size={18} className="text-terminal-green" />
@@ -290,7 +314,9 @@ const ContactSection = () => {
       </div>
 
     </section>
+
   );
+
 };
 
 export default ContactSection;
