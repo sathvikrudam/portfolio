@@ -71,9 +71,7 @@ const ContactSection = () => {
       if (res.ok) {
         setStatus("Message sent successfully!");
         setForm({ name: "", email: "", message: "" });
-
         setTimeout(() => setStatus(""), 4000);
-
       } else {
         setStatus("Failed to send message.");
       }
@@ -123,10 +121,10 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
 
-          {/* CONTACT LIST */}
+          {/* CONTACT CARDS */}
 
           <div
-            className={`grid grid-cols-1 gap-4 transition-all duration-700 delay-200 ${
+            className={`grid grid-cols-2 gap-5 transition-all duration-700 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -135,46 +133,44 @@ const ContactSection = () => {
 
               <div
                 key={label}
-                className="flex items-center justify-between bg-card border border-border rounded-xl px-5 py-4 hover:border-muted-foreground/30 hover:-translate-y-1 transition-all duration-300"
+                className="relative bg-card border border-border rounded-2xl p-6 h-[140px] hover:border-muted-foreground/40 hover:-translate-y-1 transition-all duration-300"
               >
 
-                <div className="flex items-center gap-4">
-
-                  <div className="w-10 h-10 rounded-lg bg-muted/40 flex items-center justify-center">
-                    <Icon size={18} className="text-muted-foreground" />
-                  </div>
-
-                  <div>
-
-                    <p className="text-xs text-muted-foreground font-mono">
-                      {label}
-                    </p>
-
-                    <a
-                      href={href}
-                      target={href.startsWith("http") ? "_blank" : undefined}
-                      rel="noopener noreferrer"
-                      className="text-sm text-foreground font-medium hover:underline"
-                    >
-                      {value}
-                    </a>
-
-                  </div>
-
-                </div>
+                {/* Copy button */}
 
                 <button
                   onClick={() => handleCopy(value, label)}
-                  className="opacity-70 hover:opacity-100 transition"
+                  className="absolute top-4 right-4 opacity-60 hover:opacity-100"
                 >
                   {copied === label ? (
-                    <span className="text-xs font-mono text-terminal-green">
-                      ✓
-                    </span>
+                    <span className="text-xs text-terminal-green font-mono">✓</span>
                   ) : (
                     <Copy size={14} />
                   )}
                 </button>
+
+                {/* Icon */}
+
+                <div className="w-10 h-10 rounded-xl bg-muted/40 flex items-center justify-center mb-4">
+                  <Icon size={18} className="text-muted-foreground" />
+                </div>
+
+                {/* Label */}
+
+                <p className="text-xs text-muted-foreground font-mono mb-1">
+                  {label}
+                </p>
+
+                {/* Value */}
+
+                <a
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className="text-sm text-foreground font-medium hover:underline truncate block"
+                >
+                  {value}
+                </a>
 
               </div>
 
@@ -205,7 +201,7 @@ const ContactSection = () => {
                 className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-medium hover:shadow-[0_0_30px_hsl(0_0%_100%/0.15)] transition-all duration-300"
               >
                 <Mail size={16} />
-                Send Email
+                Send Email →
               </a>
 
             </div>
