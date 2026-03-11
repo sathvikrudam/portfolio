@@ -10,7 +10,6 @@ const titles = [
 ];
 
 const HeroSection = () => {
-  const showPhoto = false; // remove this line in future to add photo...enabling itttttt
   const [titleIndex, setTitleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
@@ -195,7 +194,6 @@ const HeroSection = () => {
           </div>
 
             {/* Profile photo with enhanced styling */}
-          {showPhoto && ( // remove this line in future toooooo
             <div
               className="flex-shrink-0 animate-fade-in-up"
               style={{ animationDelay: "0.4s", opacity: 0 }}
@@ -228,7 +226,7 @@ const HeroSection = () => {
               </div>
           </div>
         </div>
-        )}  
+          
     
       </div>
 
