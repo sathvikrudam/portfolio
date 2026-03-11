@@ -55,6 +55,8 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (status === "Sending...") return;
+
     setStatus("Sending...");
 
     try {
@@ -67,12 +69,17 @@ const ContactSection = () => {
       });
 
       if (res.ok) {
+
         setStatus("Message sent successfully!");
+
         setForm({
           name: "",
           email: "",
           message: "",
         });
+
+        setTimeout(() => setStatus(""), 4000);
+
       } else {
         setStatus("Failed to send message.");
       }
@@ -87,16 +94,19 @@ const ContactSection = () => {
       id="contact"
       className="py-28 border-t border-border relative overflow-hidden"
     >
+
       <div className="absolute top-0 left-1/2 w-[500px] h-[500px] bg-muted/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
       <div ref={ref} className="container mx-auto px-6 relative z-10">
 
         {/* Header */}
+
         <div
           className={`transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
+
           <div className="flex items-center gap-3 mb-3">
             <MessageSquare size={16} className="text-terminal-green" />
             <p className="font-mono text-sm text-muted-foreground">
@@ -112,18 +122,23 @@ const ContactSection = () => {
             Interested in working together or have a question? Feel free to reach
             out through any of these channels.
           </p>
+
         </div>
 
         {/* GRID */}
+
         <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
 
           {/* CONTACT CARDS */}
+
           <div
             className={`grid grid-cols-2 gap-4 transition-all duration-700 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
+
             {contacts.map(({ icon: Icon, label, value, href }) => (
+
               <div
                 key={label}
                 className="group bg-card border border-border rounded-2xl p-5 hover:border-muted-foreground/30 hover:-translate-y-1 transition-all duration-300"
@@ -168,15 +183,19 @@ const ContactSection = () => {
                 </a>
 
               </div>
+
             ))}
+
           </div>
 
           {/* QUICK EMAIL */}
+
           <div
             className={`flex flex-col justify-center transition-all duration-700 delay-400 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
+
             <div className="bg-card border border-border rounded-2xl p-8">
 
               <div className="flex items-center gap-2 mb-4">
@@ -203,20 +222,22 @@ const ContactSection = () => {
               </a>
 
             </div>
+
           </div>
 
           {/* CONTACT FORM */}
+
           <div
             className={`transition-all duration-700 delay-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
 
-            <div className="bg-card border border-border rounded-2xl p-8">
+            <div className="bg-card/60 backdrop-blur-xl border border-border rounded-2xl p-8 shadow-xl hover:shadow-[0_0_40px_hsl(0_0%_100%/0.06)] transition-all">
 
               <div className="flex items-center gap-2 mb-6">
                 <Send size={18} className="text-terminal-green" />
-                <h3 className="font-display font-bold">
+                <h3 className="font-display font-bold text-lg">
                   Contact Form
                 </h3>
               </div>
@@ -230,7 +251,7 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setForm({ ...form, name: e.target.value })
                   }
-                  className="w-full bg-muted border border-border rounded-lg px-4 py-2 text-sm"
+                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green transition-all"
                   required
                 />
 
@@ -241,7 +262,7 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setForm({ ...form, email: e.target.value })
                   }
-                  className="w-full bg-muted border border-border rounded-lg px-4 py-2 text-sm"
+                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green transition-all"
                   required
                 />
 
@@ -252,19 +273,29 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setForm({ ...form, message: e.target.value })
                   }
-                  className="w-full bg-muted border border-border rounded-lg px-4 py-2 text-sm"
+                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green transition-all resize-none"
                   required
                 />
 
                 <button
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground py-2 rounded-lg text-sm font-medium hover:opacity-90"
+                  disabled={status === "Sending..."}
+                  className="w-full flex items-center justify-center gap-2 bg-terminal-green text-black py-3 rounded-lg text-sm font-semibold hover:scale-[1.02] hover:shadow-[0_0_25px_hsl(140_100%_40%/0.6)] transition-all duration-300 disabled:opacity-50"
                 >
-                  Send Message
+                  <Send size={16} />
+                  {status === "Sending..." ? "Sending..." : "Send Message"}
                 </button>
 
                 {status && (
-                  <p className="text-xs text-muted-foreground">
+                  <p
+                    className={`text-xs font-mono ${
+                      status.includes("success")
+                        ? "text-terminal-green"
+                        : status === "Sending..."
+                        ? "text-yellow-400"
+                        : "text-red-400"
+                    }`}
+                  >
                     {status}
                   </p>
                 )}
@@ -276,7 +307,9 @@ const ContactSection = () => {
           </div>
 
         </div>
+
       </div>
+
     </section>
   );
 };
