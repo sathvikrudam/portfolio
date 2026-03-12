@@ -12,9 +12,10 @@ export default async function handler(
 
   try {
 
-    const { name, email, message } = req.body;
+    const { name, email, subject, message } = req.body;
 
-    if (!name || !email || !message) {
+    // Validate fields
+    if (!name || !email || !subject || !message) {
       return res.status(400).json({ message: "Missing fields" });
     }
 
@@ -29,20 +30,38 @@ export default async function handler(
     await transporter.sendMail({
       from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
-      subject: `New message from ${name}`,
+
+      // Subject from form
+      subject: `Portfolio Message: ${subject}`,
+
       replyTo: email,
+
       html: `
-        <h2>New Portfolio Contact</h2>
+        <div style="font-family: Arial, sans-serif; line-height:1.6;">
+          <h2>New Portfolio Contact</h2>
 
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Subject:</strong> ${subject}</p>
 
-        <p><b>Message:</b></p>
-        <p>${message}</p>
+          <hr/>
+
+          <p><strong>Message:</strong></p>
+          <p>${message}</p>
+
+          <hr/>
+
+          <p style="color:gray;font-size:12px;">
+            Sent from your portfolio contact form.
+          </p>
+        </div>
       `,
     });
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({
+      success: true,
+      message: "Email sent successfully",
+    });
 
   } catch (error) {
 
@@ -54,4 +73,5 @@ export default async function handler(
     });
 
   }
+
 }
