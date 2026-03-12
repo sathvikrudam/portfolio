@@ -35,10 +35,11 @@ const ContactSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+});
 
   const [status, setStatus] = useState("");
 
@@ -83,10 +84,11 @@ const ContactSection = () => {
         setStatus("Message sent successfully!");
 
         setForm({
-          name: "",
-          email: "",
-          message: "",
-        });
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+});
 
         setTimeout(() => setStatus(""), 4000);
 
@@ -268,7 +270,16 @@ const ContactSection = () => {
                   className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
                   required
                 />
-
+                  <input
+  type="text"
+  placeholder="Subject"
+  value={form.subject}
+  onChange={(e) =>
+    setForm({ ...form, subject: e.target.value })
+  }
+  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
+  required
+/>
                 <textarea
                   placeholder="Your Message"
                   rows={4}
