@@ -187,7 +187,7 @@ const SkillsSection = () => {
                     hover:bg-muted/20
                     hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
                     hover:-translate-y-0.5
-                    transition-all duration-500"
+                    transition-[transform,box-shadow,background-color,border-color] duration-500"
                   >
                     <div className="flex items-center gap-3">
 
@@ -197,7 +197,7 @@ const SkillsSection = () => {
                         className="w-5 h-5 opacity-80 group-hover:opacity-100 transition"
                       />
 
-                      <span className="text-sm font-medium">
+                      <span className="text-sm font-medium text-foreground">
                         {profile.name}
                       </span>
                     </div>
