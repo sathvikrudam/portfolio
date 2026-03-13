@@ -87,7 +87,7 @@ const SkillsSection = () => {
 
         {/* Header */}
         <div
-          className={`transition-[opacity,transform] duration-500 ease-out ${
+          className={`transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -114,9 +114,9 @@ const SkillsSection = () => {
                 className={`bg-card border border-border rounded-2xl overflow-hidden
                 hover:border-muted-foreground/30
                 hover:shadow-[0_0_20px_rgba(34,197,94,0.12)]
-                transition-[transform,box-shadow,opacity] duration-300
+                transition-all duration-700
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-                style={{ transitionDelay: `${gi * 120}ms` }}
+                style={{ transitionDelay: `${(gi + 1) * 150}ms` }}
               >
 
                 {/* Card Header */}
@@ -144,10 +144,10 @@ const SkillsSection = () => {
 
                       <div className="h-1.5 bg-muted rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-foreground/70 rounded-full transition-[width] duration-700 ease-out"
+                          className="h-full bg-foreground/70 rounded-full transition-all duration-1000 ease-out"
                           style={{
                             width: isVisible ? `${skill.level}%` : "0%",
-                            transitionDelay: `${gi * 120 + si * 80}ms`,
+                            transitionDelay: `${(gi + 1) * 150 + si * 120}ms`,
                           }}
                         />
                       </div>
@@ -160,10 +160,10 @@ const SkillsSection = () => {
 
           {/* Coding Profiles */}
           <div
-            className={`transition-[opacity,transform] duration-500 ease-out ${
+            className={`transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
-            style={{ transitionDelay: "240ms" }}
+            style={{ transitionDelay: "600ms" }}
           >
             <div className="bg-card border border-border rounded-2xl overflow-hidden relative">
 
@@ -187,14 +187,14 @@ const SkillsSection = () => {
                     hover:bg-muted/20
                     hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
                     hover:-translate-y-0.5
-                    transition-[transform,box-shadow] duration-300"
+                    transition-all duration-500"
                   >
                     <div className="flex items-center gap-3">
 
                       <img
                         src={profile.logo}
                         alt={profile.name}
-                        className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity duration-200"
+                        className="w-5 h-5 opacity-80 group-hover:opacity-100 transition"
                       />
 
                       <span className="text-sm font-medium">
