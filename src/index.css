@@ -142,3 +142,29 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(0 0% 35%);
 }
+/* ===================================== */
+/* Cursor Glow Effect (Premium Dev UI) */
+/* ===================================== */
+
+.card-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(34, 197, 94, 0.15),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
