@@ -69,7 +69,8 @@ const ProjectsSection = () => {
           </h2>
         </div>
 
-        <div className="space-y-6 max-w-4xl">
+        {/* PROJECT GRID */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-6xl">
           {projects.map((project, i) => (
             <div
               key={project.title}
@@ -85,56 +86,54 @@ const ProjectsSection = () => {
                 className={`absolute inset-0 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
               />
 
-              <div className="relative flex flex-col md:flex-row md:items-center gap-6 p-6 md:p-8">
+              <div className="relative flex flex-col gap-6 p-6 md:p-8">
                 {/* Number */}
-                <div className="shrink-0">
-                  <span className="font-display text-5xl font-black text-muted/80 group-hover:text-muted-foreground/20 transition-colors">
+                <div className="absolute right-6 top-6">
+                  <span className="font-display text-4xl font-black text-muted/40 group-hover:text-muted-foreground/20 transition-colors">
                     {project.number}
                   </span>
                 </div>
 
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-4">
+                {/* Title */}
+                <div className="flex items-start justify-between gap-4">
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-display font-bold text-xl text-foreground hover:underline"
+                    >
+                      {project.title}
+                    </a>
+                  ) : (
+                    <h3 className="font-display font-bold text-xl text-foreground">
+                      {project.title}
+                    </h3>
+                  )}
 
-                    {/* Title with link */}
-                    {project.link ? (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-display font-bold text-xl text-foreground hover:underline"
-                      >
-                        {project.title}
-                      </a>
-                    ) : (
-                      <h3 className="font-display font-bold text-xl text-foreground">
-                        {project.title}
-                      </h3>
-                    )}
-
-                    <ArrowUpRight
-                      size={20}
-                      className="text-muted-foreground/30 group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300 shrink-0 mt-1"
-                    />
-                  </div>
-
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-2 max-w-xl">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs font-mono bg-muted/50 text-muted-foreground px-3 py-1 rounded-full border border-border"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
+                  <ArrowUpRight
+                    size={20}
+                    className="text-muted-foreground/30 group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300 shrink-0 mt-1"
+                  />
                 </div>
+
+                {/* Description */}
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs font-mono bg-muted/50 text-muted-foreground px-3 py-1 rounded-full border border-border"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
               </div>
             </div>
           ))}
