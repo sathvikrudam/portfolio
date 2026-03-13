@@ -159,9 +159,9 @@ const SkillsSection = () => {
             }`}
             style={{ transitionDelay: "600ms" }}
           >
-            <div className="bg-card border border-border rounded-2xl overflow-hidden relative">
+            <div className="bg-card border border-border rounded-2xl overflow-hidden relative transition-colors duration-700">
 
-              <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-muted/20">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-muted/20 transition-colors duration-700">
                 <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
                   Coding Profiles
                 </h3>
@@ -175,11 +175,11 @@ const SkillsSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center justify-between p-3 rounded-xl border border-border
-                    hover:border-muted-foreground/30
-                    hover:bg-muted/20
-                    hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
-                    hover:-translate-y-0.5
-                    transition-[transform,box-shadow,background-color,border-color] duration-500"
+hover:border-muted-foreground/30
+hover:bg-muted/20
+hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
+hover:-translate-y-0.5
+transition-[transform,box-shadow,background-color,border-color] duration-500 transition-colors duration-700"
                   >
                     <div className="flex items-center gap-3">
                       <img
