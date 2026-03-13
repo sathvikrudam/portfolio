@@ -87,7 +87,7 @@ const SkillsSection = () => {
 
         {/* Header */}
         <div
-          className={`transition-all duration-500 ease-out ${
+          className={`transition-[opacity,transform] duration-500 ease-out ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -114,7 +114,7 @@ const SkillsSection = () => {
                 className={`bg-card border border-border rounded-2xl overflow-hidden
                 hover:border-muted-foreground/30
                 hover:shadow-[0_0_20px_rgba(34,197,94,0.12)]
-                transition-[transform,box-shadow] duration-300
+                transition-[transform,box-shadow,opacity] duration-300
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: `${gi * 120}ms` }}
               >
@@ -160,7 +160,7 @@ const SkillsSection = () => {
 
           {/* Coding Profiles */}
           <div
-            className={`transition-all duration-500 ease-out ${
+            className={`transition-[opacity,transform] duration-500 ease-out ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: "240ms" }}
@@ -187,14 +187,14 @@ const SkillsSection = () => {
                     hover:bg-muted/20
                     hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
                     hover:-translate-y-0.5
-                    transition-[transform,box-shadow] duration-300
+                    transition-[transform,box-shadow] duration-300"
                   >
                     <div className="flex items-center gap-3">
 
                       <img
                         src={profile.logo}
                         alt={profile.name}
-                        className="w-5 h-5 opacity-80 group-hover:opacity-100 transition"
+                        className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity duration-200"
                       />
 
                       <span className="text-sm font-medium">
