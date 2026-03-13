@@ -27,6 +27,7 @@ const projects = [
     tags: ["Python", "OCR", "NLP", "Machine Learning"],
     color: "from-muted-foreground/10 to-transparent",
     number: "03",
+    link: "https://github.com/sathvikrudam/answer-grader",
   },
   {
     title: "Online Grocery Store App",
@@ -35,6 +36,7 @@ const projects = [
     tags: ["HTML", "CSS", "JavaScript", "Web Development"],
     color: "from-muted-foreground/5 to-transparent",
     number: "04",
+    link: "https://github.com/sathvikrudam/GroceryApp",
   },
 ];
 
