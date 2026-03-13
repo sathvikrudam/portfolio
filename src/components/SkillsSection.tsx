@@ -114,7 +114,7 @@ const SkillsSection = () => {
                 className={`bg-card border border-border rounded-2xl overflow-hidden
                 hover:border-muted-foreground/30
                 hover:shadow-[0_0_20px_rgba(34,197,94,0.12)]
-                transition-all duration-500 ease-out
+                transition-[transform,box-shadow] duration-300
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: `${gi * 120}ms` }}
               >
@@ -144,7 +144,7 @@ const SkillsSection = () => {
 
                       <div className="h-1.5 bg-muted rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-foreground/70 rounded-full transition-all duration-700 ease-out"
+                          className="h-full bg-foreground/70 rounded-full transition-[width] duration-700 ease-out"
                           style={{
                             width: isVisible ? `${skill.level}%` : "0%",
                             transitionDelay: `${gi * 120 + si * 80}ms`,
@@ -187,7 +187,7 @@ const SkillsSection = () => {
                     hover:bg-muted/20
                     hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
                     hover:-translate-y-0.5
-                    transition-all duration-300"
+                    transition-[transform,box-shadow] duration-300
                   >
                     <div className="flex items-center gap-3">
 
