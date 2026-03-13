@@ -80,12 +80,10 @@ const SkillsSection = () => {
       id="skills"
       className="py-28 border-t border-border relative overflow-hidden"
     >
-      {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-muted/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
       <div ref={ref} className="container mx-auto px-6 relative z-10">
 
-        {/* Header */}
         <div
           className={`transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -103,10 +101,8 @@ const SkillsSection = () => {
           </h2>
         </div>
 
-        {/* Grid */}
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl">
 
-          {/* Skill Cards */}
           <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
             {skillGroups.map((group, gi) => (
               <div
@@ -119,7 +115,6 @@ const SkillsSection = () => {
                 style={{ transitionDelay: `${(gi + 1) * 150}ms` }}
               >
 
-                {/* Card Header */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-muted/20">
                   <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
                     {group.title}
@@ -129,15 +124,15 @@ const SkillsSection = () => {
                   </span>
                 </div>
 
-                {/* Skills */}
                 <div className="p-6 space-y-5">
                   {group.skills.map((skill, si) => (
                     <div key={skill.name}>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm text-foreground font-medium">
+                        <span className="text-sm font-medium text-foreground transition-colors duration-200">
                           {skill.name}
                         </span>
-                        <span className="text-xs font-mono text-muted-foreground">
+
+                        <span className="text-xs font-mono text-muted-foreground transition-colors duration-200">
                           {skill.level}%
                         </span>
                       </div>
@@ -158,7 +153,6 @@ const SkillsSection = () => {
             ))}
           </div>
 
-          {/* Coding Profiles */}
           <div
             className={`transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -167,14 +161,12 @@ const SkillsSection = () => {
           >
             <div className="bg-card border border-border rounded-2xl overflow-hidden relative">
 
-              {/* Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-muted/20">
                 <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
                   Coding Profiles
                 </h3>
               </div>
 
-              {/* Profiles */}
               <div className="p-6 space-y-3">
                 {codingProfiles.map((profile) => (
                   <a
@@ -190,7 +182,6 @@ const SkillsSection = () => {
                     transition-[transform,box-shadow,background-color,border-color] duration-500"
                   >
                     <div className="flex items-center gap-3">
-
                       <img
                         src={profile.logo}
                         alt={profile.name}
