@@ -68,12 +68,9 @@ const ProjectsSection = () => {
 
         <div className="space-y-6 max-w-4xl">
           {projects.map((project, i) => (
-            <a
+            <div
               key={project.title}
-              href={project.link || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group relative block bg-card border border-border rounded-2xl overflow-hidden hover:border-muted-foreground/30 transition-all duration-700 hover:-translate-y-1 ${
+              className={`group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-muted-foreground/30 transition-all duration-700 hover:-translate-y-1 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -96,9 +93,22 @@ const ProjectsSection = () => {
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-display font-bold text-xl text-foreground group-hover:text-foreground transition-colors">
-                      {project.title}
-                    </h3>
+
+                    {/* Title with link */}
+                    {project.link ? (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-display font-bold text-xl text-foreground hover:underline"
+                      >
+                        {project.title}
+                      </a>
+                    ) : (
+                      <h3 className="font-display font-bold text-xl text-foreground">
+                        {project.title}
+                      </h3>
+                    )}
 
                     <ArrowUpRight
                       size={20}
@@ -120,9 +130,10 @@ const ProjectsSection = () => {
                       </span>
                     ))}
                   </div>
+
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
