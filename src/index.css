@@ -7,37 +7,45 @@
 @layer base {
 
 :root {
-  /* LIGHT MODE */
-  --background: 0 0% 100%;
-  --foreground: 240 10% 4%;
+  /* LIGHT MODE (Improved Dev Theme) */
 
-  --terminal-green: 142 72% 50%;
+  /* softer background */
+  --background: 210 20% 98%;
+  --foreground: 222 47% 11%;
 
+  /* terminal accent */
+  --terminal-green: 142 72% 45%;
+
+  /* cards slightly elevated */
   --card: 0 0% 100%;
-  --card-foreground: 240 10% 4%;
+  --card-foreground: 222 47% 11%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 4%;
+  --popover-foreground: 222 47% 11%;
 
-  --primary: 240 10% 4%;
+  /* buttons */
+  --primary: 222 47% 11%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 240 5% 96%;
-  --secondary-foreground: 240 10% 4%;
+  /* subtle surfaces */
+  --secondary: 210 20% 95%;
+  --secondary-foreground: 222 47% 11%;
 
-  --muted: 240 5% 96%;
-  --muted-foreground: 240 4% 40%;
+  --muted: 210 16% 93%;
+  --muted-foreground: 215 16% 47%;
 
-  --accent: 240 5% 96%;
-  --accent-foreground: 240 10% 4%;
+  --accent: 210 16% 93%;
+  --accent-foreground: 222 47% 11%;
 
-  --border: 240 6% 90%;
-  --input: 240 6% 90%;
-  --ring: 240 10% 4%;
+  /* cleaner borders */
+  --border: 214 20% 88%;
+  --input: 214 20% 88%;
+  --ring: 222 47% 11%;
 }
 
 .dark {
-  /* DARK MODE */
+  /* DARK MODE (UNCHANGED) */
+
   --background: 0 0% 3%;
   --foreground: 0 0% 95%;
 
@@ -75,6 +83,12 @@
 
   body {
     @apply bg-background text-foreground font-mono;
+
+    /* ⭐ NEW DEV GRADIENT BACKGROUND */
+    background:
+      radial-gradient(circle at 10% 20%, rgba(34,197,94,0.05), transparent 40%),
+      hsl(var(--background));
+
     font-family: 'JetBrains Mono', monospace;
   }
 
