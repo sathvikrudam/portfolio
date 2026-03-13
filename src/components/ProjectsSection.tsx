@@ -9,6 +9,7 @@ const projects = [
     tags: ["Encryption", "JavaScript", "Web Security", "Cryptography"],
     color: "from-muted-foreground/10 to-transparent",
     number: "01",
+    link: "https://github.com/sathvikrudam/ciphershare",
   },
   {
     title: "CollabDocs: Write together, in real time.",
@@ -40,29 +41,49 @@ const ProjectsSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="projects" className="py-28 border-t border-border relative overflow-hidden">
+    <section
+      id="projects"
+      className="py-28 border-t border-border relative overflow-hidden"
+    >
       <div ref={ref} className="container mx-auto px-6 relative z-10">
-        <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div
+          className={`transition-all duration-700 ${
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          }`}
+        >
           <div className="flex items-center gap-3 mb-3">
             <FolderGit2 size={16} className="text-terminal-green" />
             <p className="font-mono text-sm text-muted-foreground">
               <span className="text-terminal-green">04.</span> projects
             </p>
           </div>
+
           <h2 className="font-display text-4xl md:text-6xl font-black mb-16">
-            Selected Works<span className="text-muted-foreground">.</span>
+            Selected Works
+            <span className="text-muted-foreground">.</span>
           </h2>
         </div>
 
         <div className="space-y-6 max-w-4xl">
           {projects.map((project, i) => (
-            <div
+            <a
               key={project.title}
-              className={`group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-muted-foreground/30 transition-all duration-700 hover:-translate-y-1 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              href={project.link || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group relative block bg-card border border-border rounded-2xl overflow-hidden hover:border-muted-foreground/30 transition-all duration-700 hover:-translate-y-1 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
               style={{ transitionDelay: `${(i + 2) * 150}ms` }}
             >
               {/* Gradient accent */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+              <div
+                className={`absolute inset-0 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
+              />
 
               <div className="relative flex flex-col md:flex-row md:items-center gap-6 p-6 md:p-8">
                 {/* Number */}
@@ -78,14 +99,17 @@ const ProjectsSection = () => {
                     <h3 className="font-display font-bold text-xl text-foreground group-hover:text-foreground transition-colors">
                       {project.title}
                     </h3>
+
                     <ArrowUpRight
                       size={20}
                       className="text-muted-foreground/30 group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300 shrink-0 mt-1"
                     />
                   </div>
+
                   <p className="text-sm text-muted-foreground leading-relaxed mt-2 max-w-xl">
                     {project.description}
                   </p>
+
                   <div className="flex flex-wrap gap-2 mt-4">
                     {project.tags.map((tag) => (
                       <span
@@ -98,7 +122,7 @@ const ProjectsSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
