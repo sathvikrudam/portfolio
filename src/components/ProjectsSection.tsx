@@ -51,9 +51,7 @@ const ProjectsSection = () => {
       <div ref={ref} className="container mx-auto px-6 relative z-10">
         <div
           className={`transition-all duration-700 ${
-            isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           <div className="flex items-center gap-3 mb-3">
@@ -75,9 +73,7 @@ const ProjectsSection = () => {
             <div
               key={project.title}
               className={`group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-muted-foreground/30 transition-all duration-700 hover:-translate-y-1 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${(i + 2) * 150}ms` }}
             >
@@ -101,7 +97,7 @@ const ProjectsSection = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-display font-bold text-xl text-foreground hover:underline"
+                      className="font-display font-bold text-xl text-foreground"
                     >
                       {project.title}
                     </a>
