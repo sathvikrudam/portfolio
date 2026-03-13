@@ -12,6 +12,10 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+
+      {/* Interactive Developer Grid Background */}
+      <div className="dev-grid"></div>
+
       <Navbar />
       <HeroSection />
       <AboutSection />
@@ -22,6 +26,7 @@ const Index = () => {
       <OpportunitiesSection />
       <ContactSection />
       <Footer />
+
     </div>
   );
 };
