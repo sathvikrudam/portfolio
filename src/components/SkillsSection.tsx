@@ -181,17 +181,16 @@ const SkillsSection = () => {
   target="_blank"
   rel="noopener noreferrer"
   className="group flex items-center justify-between p-3 rounded-xl border border-border
-    hover:border-muted-foreground/30 hover:bg-muted/20
-    hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
-    transition-all duration-500"
-  style={{ transitionDelay: `${index * 100}ms` }}
-
+hover:border-muted-foreground/30 hover:bg-muted/20
+hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
+hover:-translate-y-0.5
+transition-all duration-300"
 >
                     <div className="flex items-center gap-3">
   <img
   src={profile.logo}
   alt={profile.name}
-  className="w-5 h-5 brightness-0 invert opacity-80 group-hover:opacity-100 transition"
+  className="w-5 h-5 opacity-80 group-hover:opacity-100 transition"
 />
 
   <span className="text-sm font-medium">
