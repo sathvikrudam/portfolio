@@ -168,3 +168,27 @@ html {
 .card-glow:hover::before {
   opacity: 1;
 }
+/* ========================= */
+/* Interactive Dev Grid BG   */
+/* ========================= */
+
+.dev-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  mask-image: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    black 0%,
+    transparent 60%
+  );
+
+  transition: mask-image 0.1s ease;
+}
