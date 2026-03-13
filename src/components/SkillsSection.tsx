@@ -44,32 +44,32 @@ const codingProfiles = [
     name: "LeetCode",
     username: "sathvikrudam",
     link: "https://leetcode.com/sathvikrudam",
-    logo: "https://cdn.simpleicons.org/leetcode"
+    logo: "https://cdn.simpleicons.org/leetcode",
   },
   {
     name: "CodeChef",
     username: "stvk_rdm",
     link: "https://www.codechef.com/users/stvk_rdm",
-    logo: "https://cdn.simpleicons.org/codechef"
+    logo: "https://cdn.simpleicons.org/codechef",
   },
   {
     name: "HackerRank",
     username: "sathvikrudam",
     link: "https://www.hackerrank.com/profile/sathvikrudam",
-    logo: "https://cdn.simpleicons.org/hackerrank"
+    logo: "https://cdn.simpleicons.org/hackerrank",
   },
   {
-  name: "GeeksforGeeks",
-  username: "stvk_rdm",
-  link: "https://www.geeksforgeeks.org/user/stvk_rdm/",
-  logo: "https://cdn.simpleicons.org/geeksforgeeks"
-},
+    name: "GeeksforGeeks",
+    username: "stvk_rdm",
+    link: "https://www.geeksforgeeks.org/user/stvk_rdm/",
+    logo: "https://cdn.simpleicons.org/geeksforgeeks",
+  },
   {
     name: "Codeforces",
     username: "sathvikrudam",
     link: "https://codeforces.com/profile/sathvikrudam",
-    logo: "https://cdn.simpleicons.org/codeforces"
-  }
+    logo: "https://cdn.simpleicons.org/codeforces",
+  },
 ];
 
 const SkillsSection = () => {
@@ -85,9 +85,9 @@ const SkillsSection = () => {
 
       <div ref={ref} className="container mx-auto px-6 relative z-10">
 
-        {/* Section Header */}
+        {/* Header */}
         <div
-          className={`transition-all duration-700 ${
+          className={`transition-all duration-500 ease-out ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -103,20 +103,22 @@ const SkillsSection = () => {
           </h2>
         </div>
 
-        {/* Main Grid */}
+        {/* Grid */}
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl">
 
-          {/* Skills Cards */}
+          {/* Skill Cards */}
           <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
             {skillGroups.map((group, gi) => (
               <div
                 key={group.title}
                 className={`bg-card border border-border rounded-2xl overflow-hidden
-                  hover:border-muted-foreground/30 hover:shadow-[0_0_20px_rgba(34,197,94,0.12)]
-                  transition-all duration-700
-                  ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-                style={{ transitionDelay: `${(gi + 2) * 150}ms` }}
+                hover:border-muted-foreground/30
+                hover:shadow-[0_0_20px_rgba(34,197,94,0.12)]
+                transition-all duration-500 ease-out
+                ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                style={{ transitionDelay: `${gi * 120}ms` }}
               >
+
                 {/* Card Header */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-muted/20">
                   <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
@@ -129,7 +131,7 @@ const SkillsSection = () => {
 
                 {/* Skills */}
                 <div className="p-6 space-y-5">
-                  {group.skills.map((skill) => (
+                  {group.skills.map((skill, si) => (
                     <div key={skill.name}>
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm text-foreground font-medium">
@@ -142,10 +144,10 @@ const SkillsSection = () => {
 
                       <div className="h-1.5 bg-muted rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-foreground/70 rounded-full transition-all duration-1000 ease-out"
+                          className="h-full bg-foreground/70 rounded-full transition-all duration-700 ease-out"
                           style={{
                             width: isVisible ? `${skill.level}%` : "0%",
-                            transitionDelay: `${(gi + 2) * 150 + 300}ms`,
+                            transitionDelay: `${gi * 120 + si * 80}ms`,
                           }}
                         />
                       </div>
@@ -158,10 +160,10 @@ const SkillsSection = () => {
 
           {/* Coding Profiles */}
           <div
-            className={`transition-all duration-700 ${
+            className={`transition-all duration-500 ease-out ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
-            style={{ transitionDelay: "700ms" }}
+            style={{ transitionDelay: "240ms" }}
           >
             <div className="bg-card border border-border rounded-2xl overflow-hidden relative">
 
@@ -174,29 +176,32 @@ const SkillsSection = () => {
 
               {/* Profiles */}
               <div className="p-6 space-y-3">
-                {codingProfiles.map((profile, index) => (
+                {codingProfiles.map((profile) => (
                   <a
-  key={profile.name}
-  href={profile.link}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="group flex items-center justify-between p-3 rounded-xl border border-border
-hover:border-muted-foreground/30 hover:bg-muted/20
-hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
-hover:-translate-y-0.5
-transition-all duration-300"
->
+                    key={profile.name}
+                    href={profile.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between p-3 rounded-xl border border-border
+                    hover:border-muted-foreground/30
+                    hover:bg-muted/20
+                    hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
+                    hover:-translate-y-0.5
+                    transition-all duration-300"
+                  >
                     <div className="flex items-center gap-3">
-  <img
-  src={profile.logo}
-  alt={profile.name}
-  className="w-5 h-5 opacity-80 group-hover:opacity-100 transition"
-/>
 
-  <span className="text-sm font-medium">
-    {profile.name}
-  </span>
-</div>
+                      <img
+                        src={profile.logo}
+                        alt={profile.name}
+                        className="w-5 h-5 opacity-80 group-hover:opacity-100 transition"
+                      />
+
+                      <span className="text-sm font-medium">
+                        {profile.name}
+                      </span>
+                    </div>
+
                     <span className="text-xs text-muted-foreground font-mono">
                       {profile.username}
                     </span>
