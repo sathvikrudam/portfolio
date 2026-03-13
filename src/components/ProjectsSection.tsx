@@ -3,28 +3,36 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const projects = [
   {
-    title: "Online Grocery Store App",
+    title: "CipherShare: Secure File Sharing System",
     description:
-      "A web application that allows users to browse grocery products, add items to a cart, and place orders through a simple and intuitive interface.",
-    tags: ["HTML", "CSS", "JavaScript", "Backend"],
+      "A secure file sharing web application that encrypts files before transmission, ensuring privacy and safe data exchange between users.",
+    tags: ["Encryption", "JavaScript", "Web Security", "Cryptography"],
     color: "from-muted-foreground/10 to-transparent",
     number: "01",
   },
   {
-    title: "AI Smart Answer Evaluation",
+    title: "CollabDocs: Write together, in real time.",
     description:
-      "An AI-based system designed to evaluate handwritten descriptive answer sheets using OCR and AI techniques to extract and assess answers automatically.",
-    tags: ["Python", "AI", "OCR", "Machine Learning"],
+      "A real-time collaborative document editing platform that allows multiple users to work on the same document simultaneously with live updates.",
+    tags: ["Real-time", "WebSockets", "JavaScript", "Collaboration"],
     color: "from-muted-foreground/5 to-transparent",
     number: "02",
   },
   {
-    title: "Mini Paddy Dryer",
+    title: "Automated Evaluation of Descriptive Answer Sheets Using OCR and Semantic NLP",
     description:
-      "A low-cost and efficient paddy drying system designed for farmers to help dry harvested rice quickly and affordably. Agricultural innovation focusing on affordability.",
-    tags: ["Agriculture", "Innovation", "Hardware"],
+      "An AI-powered system that automatically evaluates handwritten descriptive answer sheets using OCR for text extraction and NLP techniques for intelligent assessment.",
+    tags: ["Python", "OCR", "NLP", "Machine Learning"],
     color: "from-muted-foreground/10 to-transparent",
     number: "03",
+  },
+  {
+    title: "Online Grocery Store App",
+    description:
+      "A web application that allows users to browse grocery products, add items to a cart, and place orders through a simple and intuitive interface.",
+    tags: ["HTML", "CSS", "JavaScript", "Web Development"],
+    color: "from-muted-foreground/5 to-transparent",
+    number: "04",
   },
 ];
 
