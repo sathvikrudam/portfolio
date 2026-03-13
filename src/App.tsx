@@ -12,29 +12,24 @@ const queryClient = new QueryClient();
 function App() {
 
   useEffect(() => {
-    const cards = document.querySelectorAll(".card-glow");
+  const handleMouseMove = (e) => {
+    document.documentElement.style.setProperty(
+      "--mouse-x",
+      `${e.clientX}px`
+    );
 
-    const handleMouseMove = (e) => {
-      const target = e.currentTarget;
-      const rect = target.getBoundingClientRect();
+    document.documentElement.style.setProperty(
+      "--mouse-y",
+      `${e.clientY}px`
+    );
+  };
 
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+  window.addEventListener("mousemove", handleMouseMove);
 
-      target.style.setProperty("--mouse-x", `${x}px`);
-      target.style.setProperty("--mouse-y", `${y}px`);
-    };
-
-    cards.forEach((card) => {
-      card.addEventListener("mousemove", handleMouseMove);
-    });
-
-    return () => {
-      cards.forEach((card) => {
-        card.removeEventListener("mousemove", handleMouseMove);
-      });
-    };
-  }, []);
+  return () => {
+    window.removeEventListener("mousemove", handleMouseMove);
+  };
+}, []);
 
   return (
     <QueryClientProvider client={queryClient}>
