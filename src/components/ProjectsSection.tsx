@@ -18,6 +18,7 @@ const projects = [
     tags: ["Real-time", "WebSockets", "JavaScript", "Collaboration"],
     color: "from-muted-foreground/5 to-transparent",
     number: "02",
+    link: "https://github.com/sathvikrudam/collab-docs",
   },
   {
     title: "Automated Evaluation of Descriptive Answer Sheets Using OCR and Semantic NLP",
