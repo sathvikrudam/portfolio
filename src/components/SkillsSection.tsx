@@ -128,11 +128,11 @@ const SkillsSection = () => {
                   {group.skills.map((skill, si) => (
                     <div key={skill.name}>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium text-foreground transition-colors duration-200">
+                        <span className="text-sm font-medium text-foreground">
                           {skill.name}
                         </span>
 
-                        <span className="text-xs font-mono text-muted-foreground transition-colors duration-200">
+                        <span className="text-xs font-mono text-muted-foreground">
                           {skill.level}%
                         </span>
                       </div>
