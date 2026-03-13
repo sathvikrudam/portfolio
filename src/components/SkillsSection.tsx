@@ -44,27 +44,32 @@ const codingProfiles = [
     name: "LeetCode",
     username: "sathvikrudam",
     link: "https://leetcode.com/sathvikrudam",
+    logo: "https://cdn.simpleicons.org/leetcode"
   },
   {
     name: "CodeChef",
     username: "stvk_rdm",
     link: "https://www.codechef.com/users/stvk_rdm",
+    logo: "https://cdn.simpleicons.org/codechef"
   },
   {
     name: "HackerRank",
     username: "sathvikrudam",
     link: "https://www.hackerrank.com/profile/sathvikrudam",
+    logo: "https://cdn.simpleicons.org/hackerrank"
   },
   {
-    name: "GeeksforGeeks",
-    username: "stvk_rdm",
-    link: "https://www.geeksforgeeks.org/profile/stvk_rdm",
-  },
+  name: "GeeksforGeeks",
+  username: "stvk_rdm",
+  link: "https://www.geeksforgeeks.org/user/stvk_rdm/",
+  logo: "https://cdn.simpleicons.org/geeksforgeeks"
+},
   {
     name: "Codeforces",
     username: "sathvikrudam",
     link: "https://codeforces.com/profile/sathvikrudam",
-  },
+    logo: "https://cdn.simpleicons.org/codeforces"
+  }
 ];
 
 const SkillsSection = () => {
@@ -171,19 +176,28 @@ const SkillsSection = () => {
               <div className="p-6 space-y-3">
                 {codingProfiles.map((profile, index) => (
                   <a
-                    key={profile.name}
-                    href={profile.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl border border-border
-                      hover:border-muted-foreground/30 hover:bg-muted/20
-                      hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
-                      transition-all duration-500"
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <span className="text-sm font-medium">
-                      {profile.name}
-                    </span>
+  key={profile.name}
+  href={profile.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group flex items-center justify-between p-3 rounded-xl border border-border
+    hover:border-muted-foreground/30 hover:bg-muted/20
+    hover:shadow-[0_0_20px_rgba(34,197,94,0.15)]
+    transition-all duration-500"
+  style={{ transitionDelay: `${index * 100}ms` }}
+
+>
+                    <div className="flex items-center gap-3">
+  <img
+  src={profile.logo}
+  alt={profile.name}
+  className="w-5 h-5 brightness-0 invert opacity-80 group-hover:opacity-100 transition"
+/>
+
+  <span className="text-sm font-medium">
+    {profile.name}
+  </span>
+</div>
                     <span className="text-xs text-muted-foreground font-mono">
                       {profile.username}
                     </span>
