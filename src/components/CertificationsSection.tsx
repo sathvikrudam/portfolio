@@ -12,6 +12,11 @@ export default function CertificationsSection() {
       issuer: "GeeksforGeeks",
       link: "/certificates/mongodb.pdf",
     },
+        {
+      name: "MongoDB",
+      issuer: "GeeksforGeeks",
+      link: "/certificates/mongodb.pdf",
+    },
   ];
 
   return (
