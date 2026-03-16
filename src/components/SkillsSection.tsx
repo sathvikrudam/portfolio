@@ -97,14 +97,14 @@ const SkillsSection = () => {
             </p>
           </div>
 
-          {/* HOVER EFFECT SAME AS ABOUT */}
-          <h2 className="group font-display text-4xl md:text-6xl font-black mb-16 cursor-default">
+          {/* EXACT SAME EFFECT AS ABOUT */}
+          <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-16 cursor-default transition-all duration-300">
 
-            <span className="inline-block transition-all duration-300 group-hover:tracking-wide group-hover:translate-x-1">
+            <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
               Tech Stack
             </span>
 
-            <span className="text-muted-foreground group-hover:text-terminal-green transition-colors duration-300">
+            <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:translate-y-[-4px] group-hover:text-terminal-green">
               .
             </span>
 
