@@ -49,6 +49,8 @@ const ProjectsSection = () => {
       className="py-28 border-t border-border relative overflow-hidden"
     >
       <div ref={ref} className="container mx-auto px-6 relative z-10">
+
+        {/* HEADER */}
         <div
           className={`transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -61,9 +63,17 @@ const ProjectsSection = () => {
             </p>
           </div>
 
-          <h2 className="font-display text-4xl md:text-6xl font-black mb-16">
-            Selected Works
-            <span className="text-muted-foreground">.</span>
+          {/* SAME HOVER EFFECT AS ABOUT SECTION */}
+          <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-16 cursor-default transition-all duration-300">
+
+            <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
+              Selected Works
+            </span>
+
+            <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:translate-y-[-4px] group-hover:text-terminal-green">
+              .
+            </span>
+
           </h2>
         </div>
 
@@ -72,8 +82,15 @@ const ProjectsSection = () => {
           {projects.map((project, i) => (
             <div
               key={project.title}
-              className={`group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-muted-foreground/30 transition-all duration-700 hover:-translate-y-1 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              className={`group relative bg-card border border-border rounded-2xl overflow-hidden
+              hover:border-muted-foreground/30
+              hover:-translate-y-2
+              hover:shadow-lg
+              transition-all duration-700
+              ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${(i + 2) * 150}ms` }}
             >
@@ -83,6 +100,7 @@ const ProjectsSection = () => {
               />
 
               <div className="relative flex flex-col gap-6 p-6 md:p-8">
+
                 {/* Number */}
                 <div className="absolute right-6 top-6">
                   <span className="font-display text-4xl font-black text-muted/40 group-hover:text-muted-foreground/20 transition-colors">
