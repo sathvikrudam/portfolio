@@ -30,9 +30,17 @@ export default function CertificationsSection() {
           </p>
         </div>
 
-        {/* Section Title */}
-        <h2 className="font-display text-4xl md:text-6xl font-black mb-16">
-          Certifications<span className="text-muted-foreground">.</span>
+        {/* Section Title — SAME EFFECT AS ABOUT */}
+        <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-16 cursor-default transition-all duration-300">
+
+          <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
+            Certifications
+          </span>
+
+          <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:translate-y-[-4px] group-hover:text-terminal-green">
+            .
+          </span>
+
         </h2>
 
         {/* Certificates List */}
@@ -41,7 +49,11 @@ export default function CertificationsSection() {
           {certifications.map((cert, i) => (
             <div
               key={i}
-              className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-muted-foreground/30 transition-all duration-700 hover:-translate-y-1"
+              className="group relative bg-card border border-border rounded-2xl overflow-hidden
+              hover:border-muted-foreground/30
+              hover:-translate-y-2
+              hover:shadow-lg
+              transition-all duration-700"
             >
 
               {/* Hover Gradient Accent */}
@@ -53,7 +65,7 @@ export default function CertificationsSection() {
                 {/* Certificate Info */}
                 <div className="flex flex-col gap-2">
 
-                  <h3 className="font-display font-bold text-xl text-foreground group-hover:text-foreground transition-colors">
+                  <h3 className="font-display font-bold text-xl text-foreground transition-colors">
                     {cert.name}
                   </h3>
 
@@ -67,7 +79,11 @@ export default function CertificationsSection() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mt-2"
                   >
-                    View Certificate <ArrowUpRight size={16} />
+                    View Certificate
+                    <ArrowUpRight
+                      size={16}
+                      className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                    />
                   </a>
 
                 </div>
