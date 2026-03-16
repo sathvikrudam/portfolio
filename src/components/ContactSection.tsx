@@ -128,8 +128,18 @@ const ContactSection = () => {
             </p>
           </div>
 
-          <h2 className="font-display text-4xl md:text-6xl font-black mb-4">
-            Get in Touch<span className="text-muted-foreground">.</span>
+          {/* FIXED TITLE HOVER EFFECT */}
+
+          <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-4 cursor-default transition-all duration-300">
+
+            <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
+              Get in Touch
+            </span>
+
+            <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:translate-y-[-4px] group-hover:text-terminal-green">
+              .
+            </span>
+
           </h2>
 
           <p className="text-muted-foreground text-sm md:text-base max-w-xl mb-12">
@@ -158,8 +168,6 @@ const ContactSection = () => {
                 className="relative bg-card border border-border rounded-2xl p-6 h-[140px] hover:border-muted-foreground/40 hover:-translate-y-1 transition-all duration-300"
               >
 
-                {/* COPY BUTTON */}
-
                 <button
                   onClick={() => handleCopy(value, label)}
                   className="absolute top-4 right-4 text-xs text-muted-foreground hover:text-foreground"
@@ -175,19 +183,13 @@ const ContactSection = () => {
 
                 </button>
 
-                {/* ICON */}
-
                 <div className="w-10 h-10 rounded-xl bg-muted/40 flex items-center justify-center mb-4">
                   <Icon size={18} className="text-muted-foreground" />
                 </div>
 
-                {/* LABEL */}
-
                 <p className="text-xs text-muted-foreground font-mono mb-1">
                   {label}
                 </p>
-
-                {/* VALUE */}
 
                 <a
                   href={href}
@@ -270,16 +272,18 @@ const ContactSection = () => {
                   className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
                   required
                 />
-                  <input
-  type="text"
-  placeholder="Subject"
-  value={form.subject}
-  onChange={(e) =>
-    setForm({ ...form, subject: e.target.value })
-  }
-  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
-  required
-/>
+
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  value={form.subject}
+                  onChange={(e) =>
+                    setForm({ ...form, subject: e.target.value })
+                  }
+                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
+                  required
+                />
+
                 <textarea
                   placeholder="Your Message"
                   rows={4}
