@@ -14,7 +14,7 @@ export default function CertificationsSection() {
     },
         {
       name: "Java Internship",
-      issuer: "Kodbud IT Services",
+      issuer: "Kodbud IT Services and IT Consulting",
       link: "/certificates/javakodbud.pdf",
     },
   ];
