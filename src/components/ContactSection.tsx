@@ -128,8 +128,6 @@ const ContactSection = () => {
             </p>
           </div>
 
-          {/* FIXED TITLE HOVER EFFECT */}
-
           <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-4 cursor-default transition-all duration-300">
 
             <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
@@ -210,7 +208,7 @@ const ContactSection = () => {
 
           <div className="flex items-center">
 
-            <div className="bg-card border border-border rounded-2xl p-8 w-full">
+            <div className="bg-card border border-border rounded-2xl p-8 w-full hover:-translate-y-1 hover:border-muted-foreground/40 hover:shadow-lg transition-all duration-300">
 
               <div className="flex items-center gap-2 mb-4">
                 <Send size={18} className="text-terminal-green" />
@@ -240,7 +238,7 @@ const ContactSection = () => {
 
           <div>
 
-            <div className="bg-card/60 backdrop-blur-xl border border-border rounded-2xl p-8 shadow-xl">
+            <div className="bg-card/60 backdrop-blur-xl border border-border rounded-2xl p-8 shadow-xl hover:-translate-y-1 hover:border-muted-foreground/40 hover:shadow-lg transition-all duration-300">
 
               <div className="flex items-center gap-2 mb-6">
                 <Send size={18} className="text-terminal-green" />
