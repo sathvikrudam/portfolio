@@ -32,15 +32,21 @@ const EducationSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="education" className="py-28 border-t border-border relative overflow-hidden">
-
+    <section
+      id="education"
+      className="py-28 border-t border-border relative overflow-hidden"
+    >
       {/* Background glow */}
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-muted/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
       <div ref={ref} className="container mx-auto px-6 relative z-10">
 
         {/* HEADER */}
-        <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div
+          className={`transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
 
           <div className="flex items-center gap-3 mb-3">
             <GraduationCap size={16} className="text-terminal-green" />
@@ -49,19 +55,15 @@ const EducationSection = () => {
             </p>
           </div>
 
-          {/* HOVER EFFECT ONLY ON HEADING */}
-          <h2 className="font-display text-4xl md:text-6xl font-black mb-16 cursor-default">
+          {/* SAME HOVER SYSTEM AS ABOUT SECTION */}
+          <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-16 cursor-default transition-all duration-300">
 
-            <span className="group inline-flex items-center">
+            <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
+              Education
+            </span>
 
-              <span className="transition-all duration-300 group-hover:tracking-wide group-hover:translate-x-1">
-                Education
-              </span>
-
-              <span className="text-muted-foreground ml-1 transition-colors duration-300 group-hover:text-terminal-green">
-                .
-              </span>
-
+            <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:translate-y-[-4px] group-hover:text-terminal-green">
+              .
             </span>
 
           </h2>
@@ -77,7 +79,9 @@ const EducationSection = () => {
               key={i}
               className={`group relative bg-card border rounded-2xl p-6 transition-all duration-500 hover:border-muted-foreground/30 hover:-translate-y-2 hover:shadow-lg hover:shadow-black/10 ${
                 item.highlight ? "border-muted-foreground/20" : "border-border"
-              } ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              } ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
               style={{ transitionDelay: `${(i + 2) * 150}ms` }}
             >
 
@@ -93,7 +97,9 @@ const EducationSection = () => {
               {/* STATUS */}
               <div className="flex items-center gap-2 mb-4">
                 <Award size={16} className="text-terminal-green" />
-                <span className="font-mono text-lg font-black text-foreground">{item.status}</span>
+                <span className="font-mono text-lg font-black text-foreground">
+                  {item.status}
+                </span>
               </div>
 
               {/* DEGREE */}
