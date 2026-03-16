@@ -84,6 +84,7 @@ const SkillsSection = () => {
 
       <div ref={ref} className="container mx-auto px-6 relative z-10">
 
+        {/* HEADER */}
         <div
           className={`transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -96,13 +97,23 @@ const SkillsSection = () => {
             </p>
           </div>
 
-          <h2 className="font-display text-4xl md:text-6xl font-black mb-16">
-            Tech Stack<span className="text-muted-foreground">.</span>
+          {/* HOVER EFFECT SAME AS ABOUT */}
+          <h2 className="group font-display text-4xl md:text-6xl font-black mb-16 cursor-default">
+
+            <span className="inline-block transition-all duration-300 group-hover:tracking-wide group-hover:translate-x-1">
+              Tech Stack
+            </span>
+
+            <span className="text-muted-foreground group-hover:text-terminal-green transition-colors duration-300">
+              .
+            </span>
+
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl">
 
+          {/* SKILL CARDS */}
           <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
             {skillGroups.map((group, gi) => (
               <div
@@ -110,6 +121,7 @@ const SkillsSection = () => {
                 className={`bg-card border border-border rounded-2xl overflow-hidden
                 hover:border-muted-foreground/30
                 hover:shadow-[0_0_20px_rgba(34,197,94,0.12)]
+                hover:-translate-y-2 hover:scale-[1.01]
                 transition-all duration-700
                 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: `${(gi + 1) * 150}ms` }}
@@ -149,17 +161,20 @@ const SkillsSection = () => {
                     </div>
                   ))}
                 </div>
+
               </div>
             ))}
           </div>
 
+          {/* CODING PROFILES */}
           <div
             className={`transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: "600ms" }}
           >
-            <div className="bg-card border border-border rounded-2xl overflow-hidden relative transition-colors duration-700">
+
+            <div className="bg-card border border-border rounded-2xl overflow-hidden relative transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(34,197,94,0.12)]">
 
               <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-muted/20 transition-colors duration-700">
                 <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
