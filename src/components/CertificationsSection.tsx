@@ -13,7 +13,7 @@ export default function CertificationsSection() {
       link: "/certificates/mongodb.pdf",
     },
         {
-      name: "MongoDB",
+      name: "JAVA Internship",
       issuer: "GeeksforGeeks",
       link: "/certificates/mongodb.pdf",
     },
