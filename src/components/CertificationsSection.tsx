@@ -14,7 +14,7 @@ export default function CertificationsSection() {
     },
         {
       name: "JAVA Internship",
-      issuer: "GeeksforGeeks",
+      issuer: "Kodbud",
       link: "/certificates/mongodb.pdf",
     },
   ];
