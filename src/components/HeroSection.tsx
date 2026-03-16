@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg"; // keep for future use
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const titles = [
   "Computer Science Engineering Student",
@@ -146,16 +146,22 @@ const HeroSection = () => {
                 <span className="text-green-600 dark:text-green-400 drop-shadow-[0_0_6px_rgba(34,197,94,0.9)]">$</span> whoami
               </p>
 
-              <h1 className="font-display text-6xl md:text-8xl font-black tracking-tight leading-[0.95]">
+              {/* HERO NAME WITH SAME EFFECT AS ABOUT */}
 
-                <span className="inline-block hover:translate-x-1 transition-transform duration-300">
+              <h1 className="group font-display text-6xl md:text-8xl font-black tracking-tight leading-[0.95] cursor-default">
+
+                <span className="inline-block transition-all duration-500 group-hover:translate-x-2 group-hover:tracking-wide">
                   Sathvik
                 </span>
 
                 <br />
 
-                <span className="inline-block hover:translate-x-1 transition-transform duration-300">
-                  Rudam<span className="text-muted-foreground">.</span>
+                <span className="inline-block transition-all duration-500 group-hover:translate-x-2 group-hover:tracking-wide">
+                  Rudam
+                </span>
+
+                <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:-translate-y-2 group-hover:text-terminal-green">
+                  .
                 </span>
 
               </h1>
@@ -271,22 +277,6 @@ const HeroSection = () => {
             </div>
 
           </div>
-
-          {/* ========================================= */}
-          {/* PROFILE PHOTO SECTION (TEMPORARILY DISABLED) */}
-          {/* Remove comments below to enable again */}
-          {/* ========================================= */}
-
-          {/*
-          <div
-            className="flex-shrink-0 animate-fade-in-up"
-            style={{ animationDelay: "0.4s", opacity: 0 }}
-          >
-
-            ...PHOTO CODE HERE (UNCHANGED)...
-
-          </div>
-          */}
 
         </div>
 
