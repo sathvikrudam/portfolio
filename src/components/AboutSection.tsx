@@ -28,7 +28,8 @@ const AboutSection = () => {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-muted/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
       <div ref={ref} className="container mx-auto px-6 relative z-10">
-        {/* Section title */}
+        
+        {/* SECTION HEADER */}
         <div
           className={`transition-all duration-700 ${
             isVisible
@@ -43,12 +44,22 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <h2 className="font-display text-4xl md:text-6xl font-black mb-16">
-            About Me<span className="text-muted-foreground">.</span>
+          {/* HOVER ANIMATED TITLE */}
+          <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-16 cursor-default transition-all duration-300">
+
+            <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
+              About Me
+            </span>
+
+            <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:translate-y-[-4px] group-hover:text-terminal-green">
+              .
+            </span>
+
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-16">
+          
           {/* LEFT SIDE */}
           <div
             className={`lg:col-span-3 space-y-6 transition-all duration-700 delay-200 ${
@@ -57,8 +68,10 @@ const AboutSection = () => {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            {/* Terminal block */}
-            <div className="bg-card border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:border-muted-foreground/30">
+            
+            {/* TERMINAL BLOCK */}
+            <div className="bg-card border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:border-muted-foreground/30">
+              
               <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-muted/30">
                 <span className="w-3 h-3 rounded-full bg-red-500" />
                 <span className="w-3 h-3 rounded-full bg-yellow-400" />
@@ -75,8 +88,8 @@ const AboutSection = () => {
                   pursuing my B.Tech degree at{" "}
                   <span className="text-foreground font-medium">
                     Vardhaman College of Engineering
-                  </span>
-                  . I am passionate about software development and building
+                  </span>.
+                  I am passionate about software development and building
                   impactful technology solutions.
                 </p>
 
@@ -89,10 +102,9 @@ const AboutSection = () => {
                   and mastering{" "}
                   <span className="text-foreground font-medium">
                     Data Structures & Algorithms
-                  </span>
-                  . I'm actively expanding my knowledge in Artificial
-                  Intelligence and Machine Learning while building practical
-                  applications.
+                  </span>.
+                  I'm actively expanding my knowledge in Artificial Intelligence
+                  and Machine Learning while building practical applications.
                 </p>
 
                 <p>
@@ -106,7 +118,7 @@ const AboutSection = () => {
 
             {/* STATS */}
             <div className="grid grid-cols-4 gap-4">
-              {stats.map((stat, i) => (
+              {stats.map((stat) => (
                 <div
                   key={stat.label}
                   className={`group bg-card border border-border rounded-xl p-4 text-center transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:border-muted-foreground/40 ${
@@ -118,6 +130,7 @@ const AboutSection = () => {
                   <p className="font-display text-2xl font-black text-foreground group-hover:scale-110 transition-transform duration-300">
                     {stat.value}
                   </p>
+
                   <p className="text-xs font-mono text-muted-foreground mt-1">
                     {stat.label}
                   </p>
@@ -143,7 +156,8 @@ const AboutSection = () => {
                 key={label}
                 className="group relative bg-card border border-border rounded-xl p-4 flex items-center gap-4 cursor-default transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-muted-foreground/40 hover:bg-muted/20"
               >
-                {/* icon */}
+                
+                {/* ICON */}
                 <div className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center group-hover:bg-muted transition-all duration-300">
                   <Icon
                     size={18}
@@ -151,18 +165,20 @@ const AboutSection = () => {
                   />
                 </div>
 
-                {/* text */}
+                {/* TEXT */}
                 <div>
                   <p className="text-sm font-medium text-foreground">
                     {label}
                   </p>
+
                   <p className="text-xs text-muted-foreground font-mono">
                     {desc}
                   </p>
                 </div>
 
-                {/* glow border */}
+                {/* GLOW BORDER */}
                 <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-500 border border-muted-foreground/20 pointer-events-none"></div>
+
               </div>
             ))}
           </div>
