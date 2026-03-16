@@ -24,11 +24,8 @@ const OpportunitiesSection = () => {
             </p>
           </div>
 
-          <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-6 cursor-default transition-all duration-300">
-            <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
-              Open to Work
-            </span>
-            <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:translate-y-[-4px] group-hover:text-terminal-green">.</span>
+          <h2 className="font-display text-4xl md:text-6xl font-black mb-6">
+            Open to Work<span className="text-muted-foreground">.</span>
           </h2>
 
           <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-12 max-w-xl mx-auto">
