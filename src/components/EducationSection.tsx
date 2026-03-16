@@ -49,15 +49,17 @@ const EducationSection = () => {
             </p>
           </div>
 
-          {/* SAME EFFECT AS ABOUT ME */}
-          <h2 className="group font-display text-4xl md:text-6xl font-black mb-16 cursor-default">
+          {/* FIXED HOVER BEHAVIOR */}
+          <h2 className="font-display text-4xl md:text-6xl font-black mb-16 cursor-default">
 
-            <span className="inline-block transition-all duration-300 group-hover:tracking-wide group-hover:translate-x-1">
+            <span className="inline-block transition-all duration-300 hover:tracking-wide hover:translate-x-1">
+
               Education
-            </span>
 
-            <span className="text-muted-foreground group-hover:text-terminal-green transition-colors duration-300">
-              .
+              <span className="text-muted-foreground hover:text-terminal-green transition-colors duration-300">
+                .
+              </span>
+
             </span>
 
           </h2>
@@ -89,7 +91,9 @@ const EducationSection = () => {
               {/* STATUS */}
               <div className="flex items-center gap-2 mb-4">
                 <Award size={16} className="text-terminal-green" />
-                <span className="font-mono text-lg font-black text-foreground">{item.status}</span>
+                <span className="font-mono text-lg font-black text-foreground">
+                  {item.status}
+                </span>
               </div>
 
               {/* DEGREE */}
