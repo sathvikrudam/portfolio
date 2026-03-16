@@ -25,11 +25,14 @@ const HeroSection = () => {
 
     if (!deleting && charIndex < current.length) {
       timeout = setTimeout(() => setCharIndex((c) => c + 1), 60);
-    } else if (!deleting && charIndex === current.length) {
+    } 
+    else if (!deleting && charIndex === current.length) {
       timeout = setTimeout(() => setDeleting(true), 2000);
-    } else if (deleting && charIndex > 0) {
+    } 
+    else if (deleting && charIndex > 0) {
       timeout = setTimeout(() => setCharIndex((c) => c - 1), 30);
-    } else if (deleting && charIndex === 0) {
+    } 
+    else if (deleting && charIndex === 0) {
       setDeleting(false);
       setTitleIndex((i) => (i + 1) % titles.length);
     }
@@ -155,7 +158,13 @@ const HeroSection = () => {
                 <br />
 
                 <span className="inline-block hover:translate-x-1 transition-transform duration-300">
-                  Rudam<span className="text-muted-foreground">.</span>
+                  Rudam
+                </span>
+
+                {/* NEW GREEN DOT */}
+
+                <span className="inline-block ml-1 text-terminal-green animate-pulse">
+                  .
                 </span>
 
               </h1>
@@ -271,22 +280,6 @@ const HeroSection = () => {
             </div>
 
           </div>
-
-          {/* ========================================= */}
-          {/* PROFILE PHOTO SECTION (TEMPORARILY DISABLED) */}
-          {/* Remove comments below to enable again */}
-          {/* ========================================= */}
-
-          {/*
-          <div
-            className="flex-shrink-0 animate-fade-in-up"
-            style={{ animationDelay: "0.4s", opacity: 0 }}
-          >
-
-            ...PHOTO CODE HERE (UNCHANGED)...
-
-          </div>
-          */}
 
         </div>
 
