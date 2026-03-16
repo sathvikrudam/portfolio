@@ -12,7 +12,7 @@ const focusAreas = [
 const stats = [
   { value: "9.39", label: "CGPA" },
   { value: "5+", label: "Projects" },
-  { value: "6th", label: "Semester" },
+  { value: "100+", label: "Coding Problems Solved" },
   { value: "3+", label: "Languages" },
 ];
 
