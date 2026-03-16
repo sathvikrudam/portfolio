@@ -25,14 +25,11 @@ const HeroSection = () => {
 
     if (!deleting && charIndex < current.length) {
       timeout = setTimeout(() => setCharIndex((c) => c + 1), 60);
-    } 
-    else if (!deleting && charIndex === current.length) {
+    } else if (!deleting && charIndex === current.length) {
       timeout = setTimeout(() => setDeleting(true), 2000);
-    } 
-    else if (deleting && charIndex > 0) {
+    } else if (deleting && charIndex > 0) {
       timeout = setTimeout(() => setCharIndex((c) => c - 1), 30);
-    } 
-    else if (deleting && charIndex === 0) {
+    } else if (deleting && charIndex === 0) {
       setDeleting(false);
       setTitleIndex((i) => (i + 1) % titles.length);
     }
@@ -119,8 +116,6 @@ const HeroSection = () => {
 
         <div className="flex flex-col items-start gap-16">
 
-          {/* TEXT CONTENT */}
-
           <div className="flex-1 space-y-8">
 
             {/* Status badge */}
@@ -151,20 +146,22 @@ const HeroSection = () => {
 
               <h1 className="font-display text-6xl md:text-8xl font-black tracking-tight leading-[0.95]">
 
+                {/* FIRST LINE */}
                 <span className="inline-block hover:translate-x-1 transition-transform duration-300">
                   Sathvik
                 </span>
 
                 <br />
 
-                <span className="inline-block hover:translate-x-1 transition-transform duration-300">
+                {/* SECOND LINE WITH DOT EFFECT */}
+                <span className="group inline-block hover:translate-x-1 transition-transform duration-300">
+
                   Rudam
-                </span>
 
-                {/* NEW GREEN DOT */}
+                  <span className="text-muted-foreground group-hover:text-terminal-green transition-colors duration-300">
+                    .
+                  </span>
 
-                <span className="inline-block ml-1 text-terminal-green animate-pulse">
-                  .
                 </span>
 
               </h1>
