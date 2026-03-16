@@ -17,7 +17,7 @@ const OpportunitiesSection = () => {
 
       <div ref={ref} className="container mx-auto px-6 relative z-10">
         <div className={`max-w-3xl mx-auto text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <div className="inline-flex items-center gap-3 mb-3">
+          <div className="inline-flex items-center gap-3 mb-3 justify-center">
             <Briefcase size={16} className="text-terminal-green" />
             <p className="font-mono text-sm text-muted-foreground">
               <span className="text-terminal-green">06.</span> opportunities
