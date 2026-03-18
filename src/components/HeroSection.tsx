@@ -195,7 +195,7 @@ const HeroSection = () => {
               A Computer Science Engineering student with a strong passion
               for software development and problem solving. Specializing in
 
-              <span className="text-foreground font-medium"> Java programming</span>
+              <span className="text-foreground font-medium"> Java programming </span>
 
                and
 
