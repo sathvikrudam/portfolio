@@ -1,3 +1,4 @@
+import Cursor from "@/components/Cursor";
 import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
