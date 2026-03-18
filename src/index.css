@@ -82,16 +82,16 @@
   }
 
   body {
-    @apply bg-background text-foreground font-mono;
+  @apply bg-background text-foreground font-mono;
 
-    /* ⭐ NEW DEV GRADIENT BACKGROUND */
-    background:
-      radial-gradient(circle at 10% 20%, rgba(34,197,94,0.05), transparent 40%),
-      hsl(var(--background));
+  cursor: none; /* ✅ ADD THIS */
 
-    font-family: 'JetBrains Mono', monospace;
-  }
+  background:
+    radial-gradient(circle at 10% 20%, rgba(34,197,94,0.05), transparent 40%),
+    hsl(var(--background));
 
+  font-family: 'JetBrains Mono', monospace;
+}
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', sans-serif;
   }
