@@ -197,7 +197,7 @@ const HeroSection = () => {
 
               <span className="text-foreground font-medium"> Java programming</span>
 
-              and
+               and
 
               <span className="text-foreground font-medium"> Data Structures & Algorithms</span>.
 
