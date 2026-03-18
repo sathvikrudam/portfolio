@@ -192,3 +192,6 @@ html {
 
   transition: mask-image 0.1s ease;
 }
+button, a {
+  cursor: none;
+}
