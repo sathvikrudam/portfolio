@@ -14,7 +14,7 @@ const Cursor = () => {
 
     document.addEventListener("mousemove", move);
 
-    const targets = document.querySelectorAll("a, button");
+    const targets = document.querySelectorAll("a, button, .group");
     targets.forEach(el => {
       el.addEventListener("mouseenter", addHover);
       el.addEventListener("mouseleave", removeHover);
