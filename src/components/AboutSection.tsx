@@ -31,7 +31,7 @@ const AboutSection = () => {
         
         {/* SECTION HEADER */}
         <div
-          className={`transition-[opacity,transform] duration-700 ease-out ${
+          className={`transition-all duration-700 ${
             isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"
@@ -44,15 +44,17 @@ const AboutSection = () => {
             </p>
           </div>
 
-          {/* HOVER ANIMATED TITLE - Restored stretch & precise dot positioning */}
-          <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-16 cursor-default">
-            <span className="inline-block transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) group-hover:tracking-wider will-change-[contents,transform]">
+          {/* HOVER ANIMATED TITLE */}
+          <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-16 cursor-default transition-all duration-300">
+
+            <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
               About Me
             </span>
-            
-            <span className="text-muted-foreground inline-block transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:text-terminal-green will-change-transform ml-1">
+
+            <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:translate-y-[-4px] group-hover:text-terminal-green">
               .
             </span>
+
           </h2>
         </div>
 
@@ -60,7 +62,7 @@ const AboutSection = () => {
           
           {/* LEFT SIDE */}
           <div
-            className={`lg:col-span-3 space-y-6 transition-[opacity,transform] duration-700 delay-200 ease-out ${
+            className={`lg:col-span-3 space-y-6 transition-all duration-700 delay-200 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
@@ -68,7 +70,7 @@ const AboutSection = () => {
           >
             
             {/* TERMINAL BLOCK */}
-            <div className="bg-card border border-border rounded-2xl overflow-hidden transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-1 hover:shadow-xl hover:border-muted-foreground/30">
+            <div className="bg-card border border-border rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:border-muted-foreground/30">
               
               <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-muted/30">
                 <span className="w-3 h-3 rounded-full bg-red-500" />
@@ -119,13 +121,13 @@ const AboutSection = () => {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className={`group bg-card border border-border rounded-xl p-4 text-center transition-[transform,opacity,border-color,box-shadow] duration-500 hover:-translate-y-2 hover:shadow-lg hover:border-muted-foreground/40 ${
+                  className={`group bg-card border border-border rounded-xl p-4 text-center transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:border-muted-foreground/40 ${
                     isVisible
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-6"
                   }`}
                 >
-                  <p className="font-display text-2xl font-black text-foreground group-hover:scale-110 transition-transform duration-300 will-change-transform">
+                  <p className="font-display text-2xl font-black text-foreground group-hover:scale-110 transition-transform duration-300">
                     {stat.value}
                   </p>
 
@@ -139,7 +141,7 @@ const AboutSection = () => {
 
           {/* RIGHT SIDE */}
           <div
-            className={`lg:col-span-2 space-y-3 transition-[opacity,transform] duration-700 delay-400 ease-out ${
+            className={`lg:col-span-2 space-y-3 transition-all duration-700 delay-400 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
@@ -152,14 +154,14 @@ const AboutSection = () => {
             {focusAreas.map(({ icon: Icon, label, desc }) => (
               <div
                 key={label}
-                className="group relative bg-card border border-border rounded-xl p-4 flex items-center gap-4 cursor-default transition-[transform,background-color,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-muted-foreground/40 hover:bg-muted/20"
+                className="group relative bg-card border border-border rounded-xl p-4 flex items-center gap-4 cursor-default transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-muted-foreground/40 hover:bg-muted/20"
               >
                 
                 {/* ICON */}
-                <div className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center group-hover:bg-muted transition-colors duration-300">
+                <div className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center group-hover:bg-muted transition-all duration-300">
                   <Icon
                     size={18}
-                    className="text-muted-foreground group-hover:text-foreground group-hover:scale-110 transition-transform duration-300 will-change-transform"
+                    className="text-muted-foreground group-hover:text-foreground group-hover:scale-110 transition-all duration-300"
                   />
                 </div>
 
@@ -175,7 +177,7 @@ const AboutSection = () => {
                 </div>
 
                 {/* GLOW BORDER */}
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 border border-muted-foreground/20 pointer-events-none"></div>
+                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-500 border border-muted-foreground/20 pointer-events-none"></div>
 
               </div>
             ))}
