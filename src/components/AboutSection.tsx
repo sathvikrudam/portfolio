@@ -44,19 +44,14 @@ const AboutSection = () => {
             </p>
           </div>
 
-          {/* HOVER ANIMATED TITLE - Fixed for Safari & Exact Spacing */}
-          <h2 className="group inline-flex items-baseline font-display text-4xl md:text-6xl font-black mb-16 cursor-default">
-            
-            {/* The Text Stretching Effect */}
-            <span className="inline-block origin-left transition-transform duration-500 ease-out group-hover:scale-x-[1.03] group-hover:translate-x-1 will-change-transform">
+          {/* HOVER ANIMATED TITLE - MATCHES PIC 2 EXACTLY */}
+          <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-16 cursor-default">
+            <span className="inline-block transition-all duration-500 ease-out group-hover:tracking-wider will-change-[letter-spacing]">
               About Me
             </span>
-
-            {/* The Dot - Fixed position and transition */}
-            <span className="text-muted-foreground inline-block ml-4 transition-all duration-500 ease-out group-hover:translate-x-3 group-hover:-translate-y-2 group-hover:text-terminal-green will-change-transform">
+            <span className="text-muted-foreground inline-block ml-2 transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:text-terminal-green will-change-transform">
               .
             </span>
-
           </h2>
         </div>
 
