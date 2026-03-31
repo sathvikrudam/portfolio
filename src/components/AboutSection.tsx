@@ -44,14 +44,13 @@ const AboutSection = () => {
             </p>
           </div>
 
-          {/* HOVER ANIMATED TITLE - Fixed for Safari/Brave cross-compatibility */}
+          {/* HOVER ANIMATED TITLE - Restored stretch & precise dot positioning */}
           <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-16 cursor-default">
-            <span className="inline-block transition-all duration-500 ease-out group-hover:tracking-wider group-hover:translate-x-1 will-change-[transform,letter-spacing]">
+            <span className="inline-block transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) group-hover:tracking-wider will-change-[contents,transform]">
               About Me
             </span>
             
-            {/* The Dot: Positioned exactly like screenshot 2 */}
-            <span className="inline-block ml-3 text-muted-foreground transition-all duration-500 ease-out group-hover:-translate-x-1.5 group-hover:text-terminal-green will-change-transform">
+            <span className="text-muted-foreground inline-block transition-all duration-500 ease-out group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:text-terminal-green will-change-transform ml-1">
               .
             </span>
           </h2>
