@@ -17,7 +17,7 @@ export default function CertificationsSection() {
 
   const internships = [
     {
-      name: "Java Internship",
+      name: "Java Intern",
       issuer: "Kodbud IT Services and IT Consulting",
       link: "/certificates/javakodbud.pdf",
     },
