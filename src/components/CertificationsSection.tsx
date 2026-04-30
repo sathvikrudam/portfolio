@@ -35,7 +35,7 @@ export default function CertificationsSection() {
           <Award size={16} className="text-terminal-green" />
 
           <p className="font-mono text-sm text-muted-foreground">
-            <span className="text-terminal-green">05.</span> credentials
+            <span className="text-terminal-green">05.</span> certifications
           </p>
         </div>
 
