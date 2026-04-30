@@ -3,15 +3,6 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const projects = [
   {
-    title: "CipherShare: Secure File Sharing System",
-    description:
-      "A secure file sharing web application that encrypts files before transmission, ensuring privacy and safe data exchange between users.",
-    tags: ["Encryption", "JavaScript", "Web Security", "Cryptography"],
-    color: "from-muted-foreground/10 to-transparent",
-    number: "01",
-    link: "https://ciphershare.sathvikrudam.online",
-  },
-  {
     title: "CollabDocs: Write together, in real time.",
     description:
       "A real-time collaborative document editing platform that allows multiple users to work on the same document simultaneously with live updates.",
@@ -19,6 +10,15 @@ const projects = [
     color: "from-muted-foreground/5 to-transparent",
     number: "02",
     link: "https://collabdocs.sathvikrudam.online",
+  },
+  {
+    title: "CipherShare: Secure File Sharing System",
+    description:
+      "A secure file sharing web application that encrypts files before transmission, ensuring privacy and safe data exchange between users.",
+    tags: ["Encryption", "JavaScript", "Web Security", "Cryptography"],
+    color: "from-muted-foreground/10 to-transparent",
+    number: "01",
+    link: "https://ciphershare.sathvikrudam.online",
   },
   {
     title: "Automated Evaluation of Descriptive Answer Sheets Using OCR and Semantic NLP",
