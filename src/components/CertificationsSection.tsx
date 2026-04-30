@@ -35,15 +35,15 @@ export default function CertificationsSection() {
           <Award size={16} className="text-terminal-green" />
 
           <p className="font-mono text-sm text-muted-foreground">
-            <span className="text-terminal-green">05.</span> certifications
+            <span className="text-terminal-green">05.</span> credentials
           </p>
         </div>
 
-        {/* Section Title */}
+        {/* Updated Heading */}
         <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-16 cursor-default transition-all duration-300">
 
           <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
-            Certifications
+            Certifications & Internships
           </span>
 
           <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:translate-y-[-4px] group-hover:text-terminal-green">
@@ -52,93 +52,111 @@ export default function CertificationsSection() {
 
         </h2>
 
-        {/* TWO COLUMNS */}
+        {/* TWO COLUMN LAYOUT */}
         <div className="grid md:grid-cols-2 gap-10 max-w-6xl">
 
-          {/* LEFT — Certifications */}
-          <div className="flex flex-col gap-6">
-            {certifications.map((cert, i) => (
-              <div
-                key={i}
-                className="group relative bg-card border border-border rounded-2xl overflow-hidden
-                hover:border-muted-foreground/30
-                hover:-translate-y-2
-                hover:shadow-lg
-                transition-all duration-700"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-muted-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          {/* LEFT: CERTIFICATIONS */}
+          <div>
+            <h3 className="text-lg font-mono text-muted-foreground mb-6">
+              Certifications
+            </h3>
 
-                <div className="relative flex items-center justify-between p-8">
-                  <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-6">
+              {certifications.map((cert, i) => (
+                <div
+                  key={i}
+                  className="group relative bg-card border border-border rounded-2xl overflow-hidden
+                  hover:border-muted-foreground/30
+                  hover:-translate-y-2
+                  hover:shadow-lg
+                  transition-all duration-700"
+                >
 
-                    <h3 className="font-display font-bold text-xl text-foreground transition-colors">
-                      {cert.name}
-                    </h3>
+                  <div className="absolute inset-0 bg-gradient-to-r from-muted-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                    <p className="text-sm text-muted-foreground">
-                      {cert.issuer}
-                    </p>
+                  <div className="relative flex items-center justify-between p-8">
 
-                    <a
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mt-2"
-                    >
-                      View Certificate
-                      <ArrowUpRight
-                        size={16}
-                        className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                      />
-                    </a>
+                    <div className="flex flex-col gap-2">
+
+                      <h3 className="font-display font-bold text-xl text-foreground transition-colors">
+                        {cert.name}
+                      </h3>
+
+                      <p className="text-sm text-muted-foreground">
+                        {cert.issuer}
+                      </p>
+
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mt-2"
+                      >
+                        View Certificate
+                        <ArrowUpRight
+                          size={16}
+                          className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                        />
+                      </a>
+
+                    </div>
 
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          {/* RIGHT — Internships */}
-          <div className="flex flex-col gap-6">
-            {internships.map((cert, i) => (
-              <div
-                key={i}
-                className="group relative bg-card border border-border rounded-2xl overflow-hidden
-                hover:border-muted-foreground/30
-                hover:-translate-y-2
-                hover:shadow-lg
-                transition-all duration-700"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-muted-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          {/* RIGHT: INTERNSHIPS */}
+          <div>
+            <h3 className="text-lg font-mono text-muted-foreground mb-6">
+              Internships
+            </h3>
 
-                <div className="relative flex items-center justify-between p-8">
-                  <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-6">
+              {internships.map((cert, i) => (
+                <div
+                  key={i}
+                  className="group relative bg-card border border-border rounded-2xl overflow-hidden
+                  hover:border-muted-foreground/30
+                  hover:-translate-y-2
+                  hover:shadow-lg
+                  transition-all duration-700"
+                >
 
-                    <h3 className="font-display font-bold text-xl text-foreground transition-colors">
-                      {cert.name}
-                    </h3>
+                  <div className="absolute inset-0 bg-gradient-to-r from-muted-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                    <p className="text-sm text-muted-foreground">
-                      {cert.issuer}
-                    </p>
+                  <div className="relative flex items-center justify-between p-8">
 
-                    <a
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mt-2"
-                    >
-                      View Certificate
-                      <ArrowUpRight
-                        size={16}
-                        className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                      />
-                    </a>
+                    <div className="flex flex-col gap-2">
+
+                      <h3 className="font-display font-bold text-xl text-foreground transition-colors">
+                        {cert.name}
+                      </h3>
+
+                      <p className="text-sm text-muted-foreground">
+                        {cert.issuer}
+                      </p>
+
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mt-2"
+                      >
+                        View Certificate
+                        <ArrowUpRight
+                          size={16}
+                          className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                        />
+                      </a>
+
+                    </div>
 
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
         </div>
