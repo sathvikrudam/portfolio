@@ -25,7 +25,7 @@ export default function CertificationsSection() {
 
   return (
     <section
-      id="certifications"
+      id="proofofwork"
       className="py-28 border-t border-border relative overflow-hidden"
     >
       <div className="container mx-auto px-6 relative z-10">
