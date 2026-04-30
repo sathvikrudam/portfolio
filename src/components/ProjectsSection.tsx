@@ -9,7 +9,7 @@ const projects = [
     tags: ["Encryption", "JavaScript", "Web Security", "Cryptography"],
     color: "from-muted-foreground/10 to-transparent",
     number: "01",
-    link: "https://github.com/sathvikrudam/ciphershare",
+    link: "https://ciphershare.sathvikrudam.online",
   },
   {
     title: "CollabDocs: Write together, in real time.",
