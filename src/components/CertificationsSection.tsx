@@ -13,6 +13,11 @@ export default function CertificationsSection() {
       issuer: "GeeksforGeeks",
       link: "/certificates/mongodb.pdf",
     },
+    {
+      name: "Networking Basics",
+      issuer: "VCE Cisco",
+      link: "/certificates/vcecisco.pdf",
+    },
   ];
 
   const internships = [
