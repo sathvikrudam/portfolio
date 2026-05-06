@@ -15,7 +15,7 @@ export default function CertificationsSection() {
     },
     {
       name: "Networking Basics",
-      issuer: "Cisco VCE",
+      issuer: "VCE Cisco",
       link: "/certificates/vcecisco.pdf",
     },
     {
