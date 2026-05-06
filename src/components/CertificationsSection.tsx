@@ -45,7 +45,7 @@ export default function CertificationsSection() {
           <Award size={16} className="text-terminal-green" />
 
           <p className="font-mono text-sm text-muted-foreground">
-            <span className="text-terminal-green">05.</span> proof of work
+            <span className="text-terminal-green">05.</span> proof_of_work
           </p>
         </div>
 
