@@ -18,6 +18,11 @@ export default function CertificationsSection() {
       issuer: "VCE Cisco",
       link: "/certificates/vcecisco.pdf",
     },
+    {
+      name: "GenAI Powered Data Analytics Job Simulation",
+      issuer: "TATA Forage",
+      link: "/certificates/genaitata.pdf",
+    },
   ];
 
   const internships = [
