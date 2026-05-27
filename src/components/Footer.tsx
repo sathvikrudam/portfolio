@@ -10,7 +10,7 @@ const Footer = () => (
             Sathvik
             <span className="text-muted-foreground font-light">{" />"}</span>
           </a>
-          <span className="text-xs text-muted-foreground font-mono">© 2025 All rights reserved.</span>
+          <span className="text-xs text-muted-foreground font-mono">© 2026 All rights reserved.</span>
         </div>
 
         <div className="flex items-center gap-4">
