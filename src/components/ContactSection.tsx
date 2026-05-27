@@ -35,42 +35,31 @@ const ContactSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   const [form, setForm] = useState({
-  name: "",
-  email: "",
-  subject: "",
-  message: "",
-});
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
   const [status, setStatus] = useState("");
 
   const handleCopy = async (value: string, label: string) => {
-
     try {
-
       await navigator.clipboard.writeText(value);
-
       setCopied(label);
-
-      setTimeout(() => {
-        setCopied(null);
-      }, 2000);
-
+      setTimeout(() => setCopied(null), 2000);
     } catch {
       console.error("Copy failed");
     }
-
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-
     e.preventDefault();
-
     if (status === "Sending...") return;
 
     setStatus("Sending...");
 
     try {
-
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -80,30 +69,23 @@ const ContactSection = () => {
       });
 
       if (res.ok) {
-
         setStatus("Message sent successfully!");
-
         setForm({
-  name: "",
-  email: "",
-  subject: "",
-  message: "",
-});
-
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
         setTimeout(() => setStatus(""), 4000);
-
       } else {
         setStatus("Failed to send message.");
       }
-
     } catch {
       setStatus("Server error. Try again.");
     }
-
   };
 
   return (
-
     <section
       id="contact"
       className="py-28 border-t border-border relative overflow-hidden"
@@ -114,7 +96,6 @@ const ContactSection = () => {
       <div ref={ref} className="container mx-auto px-6 relative z-10">
 
         {/* HEADER */}
-
         <div
           className={`transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -129,15 +110,12 @@ const ContactSection = () => {
           </div>
 
           <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-4 cursor-default transition-all duration-300">
-
             <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
               Get in Touch
             </span>
-
             <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:translate-y-[-4px] group-hover:text-terminal-green">
               .
             </span>
-
           </h2>
 
           <p className="text-muted-foreground text-sm md:text-base max-w-xl mb-12">
@@ -148,11 +126,9 @@ const ContactSection = () => {
         </div>
 
         {/* GRID */}
-
         <div className="grid lg:grid-cols-[1fr_1.2fr_1fr] gap-12 w-full">
 
           {/* CONTACT CARDS */}
-
           <div
             className={`grid grid-cols-2 gap-5 transition-all duration-700 delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -205,7 +181,6 @@ const ContactSection = () => {
           </div>
 
           {/* QUICK MESSAGE */}
-
           <div className="flex items-center">
 
             <div className="bg-card border border-border rounded-2xl p-8 w-full hover:-translate-y-1 hover:border-muted-foreground/40 hover:shadow-lg transition-all duration-300">
@@ -235,7 +210,6 @@ const ContactSection = () => {
           </div>
 
           {/* CONTACT FORM */}
-
           <div>
 
             <div className="bg-card/60 backdrop-blur-xl border border-border rounded-2xl p-8 shadow-xl hover:-translate-y-1 hover:border-muted-foreground/40 hover:shadow-lg transition-all duration-300">
@@ -256,7 +230,7 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setForm({ ...form, name: e.target.value })
                   }
-                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
+                  className="w-full bg-muted/40 border border-border rounded-2xl px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
                   required
                 />
 
@@ -267,7 +241,7 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setForm({ ...form, email: e.target.value })
                   }
-                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
+                  className="w-full bg-muted/40 border border-border rounded-2xl px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
                   required
                 />
 
@@ -278,7 +252,7 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setForm({ ...form, subject: e.target.value })
                   }
-                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
+                  className="w-full bg-muted/40 border border-border rounded-2xl px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green"
                   required
                 />
 
@@ -289,14 +263,14 @@ const ContactSection = () => {
                   onChange={(e) =>
                     setForm({ ...form, message: e.target.value })
                   }
-                  className="w-full bg-muted/40 border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green resize-none"
+                  className="w-full bg-muted/40 border border-border rounded-2xl px-4 py-3 text-sm outline-none focus:border-terminal-green focus:ring-1 focus:ring-terminal-green resize-none"
                   required
                 />
 
                 <button
                   type="submit"
                   disabled={status === "Sending..."}
-                  className="w-full flex items-center justify-center gap-2 bg-terminal-green text-black py-3 rounded-lg text-sm font-semibold hover:scale-[1.02] hover:shadow-[0_0_25px_hsl(140_100%_40%/0.6)] transition-all disabled:opacity-50"
+                  className="w-full flex items-center justify-center gap-2 bg-terminal-green text-black py-3 rounded-2xl text-sm font-semibold hover:scale-[1.02] hover:shadow-[0_0_25px_hsl(140_100%_40%/0.6)] transition-all disabled:opacity-50"
                 >
                   <Send size={16} />
                   {status === "Sending..." ? "Sending..." : "Send Message"}
@@ -327,9 +301,7 @@ const ContactSection = () => {
       </div>
 
     </section>
-
   );
-
 };
 
 export default ContactSection;
