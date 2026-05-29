@@ -5,9 +5,9 @@ const education = [
   {
     degree: "B.Tech in Computer Science Engineering",
     institution: "Vardhaman College of Engineering",
-    detail: "CGPA: 9.39",
+    detail: "CGPA: 9.36",
     period: "2023 – 2027 (Expected)",
-    status: "Semester 6 · Ongoing",
+    status: "Semester 7 · Ongoing",
     highlight: true,
   },
   {
