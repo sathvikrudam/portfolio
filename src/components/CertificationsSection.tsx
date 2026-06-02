@@ -35,6 +35,7 @@ export default function CertificationsSection() {
     {
       name: "Summer Research Intern",
       issuer: "Symbiosis Institute of Technology Hyderabad",
+      period: "May - July . 2026 . Ongoing",
       link: "/certificates/sithofferletter.pdf",
     },
   ];
