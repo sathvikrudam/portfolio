@@ -29,6 +29,7 @@ export default function CertificationsSection() {
     {
       name: "Java Developer Intern",
       issuer: "Kodbud IT Services and IT Consulting",
+      period: "February - March . 2026",
       link: "/certificates/javakodbud.pdf",
     },
     {
