@@ -1,7 +1,6 @@
 import { Award, ArrowUpRight } from "lucide-react";
 
 export default function CertificationsSection() {
-
   const certifications = [
     {
       name: "Agentforce Specialist",
@@ -29,11 +28,13 @@ export default function CertificationsSection() {
     {
       name: "Java Developer Intern",
       issuer: "Kodbud IT Services and IT Consulting",
+      period: "May 2024 – Jun 2024",
       link: "/certificates/javakodbud.pdf",
     },
     {
       name: "Summer Research Intern",
       issuer: "Symbiosis Institute of Technology Hyderabad",
+      period: "May 2025 – Jul 2025",
       link: "/certificates/sithofferletter.pdf",
     },
   ];
@@ -54,9 +55,8 @@ export default function CertificationsSection() {
           </p>
         </div>
 
-        {/* Updated Heading */}
+        {/* Heading */}
         <h2 className="group inline-block font-display text-4xl md:text-6xl font-black mb-16 cursor-default transition-all duration-300">
-
           <span className="inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:tracking-wide">
             Certifications & Internships
           </span>
@@ -64,13 +64,12 @@ export default function CertificationsSection() {
           <span className="text-muted-foreground inline-block ml-1 transition-all duration-500 group-hover:translate-y-[-4px] group-hover:text-terminal-green">
             .
           </span>
-
         </h2>
 
         {/* TWO COLUMN LAYOUT */}
         <div className="grid md:grid-cols-2 gap-10 max-w-6xl">
 
-          {/* LEFT: CERTIFICATIONS */}
+          {/* CERTIFICATIONS */}
           <div>
             <h3 className="text-lg font-mono text-muted-foreground mb-6">
               Certifications
@@ -86,13 +85,10 @@ export default function CertificationsSection() {
                   hover:shadow-lg
                   transition-all duration-700"
                 >
-
                   <div className="absolute inset-0 bg-gradient-to-r from-muted-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   <div className="relative flex items-center justify-between p-8">
-
                     <div className="flex flex-col gap-2">
-
                       <h3 className="font-display font-bold text-xl text-foreground transition-colors">
                         {cert.name}
                       </h3>
@@ -113,16 +109,14 @@ export default function CertificationsSection() {
                           className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                         />
                       </a>
-
                     </div>
-
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* RIGHT: INTERNSHIPS */}
+          {/* INTERNSHIPS */}
           <div>
             <h3 className="text-lg font-mono text-muted-foreground mb-6">
               Internships
@@ -138,11 +132,9 @@ export default function CertificationsSection() {
                   hover:shadow-lg
                   transition-all duration-700"
                 >
-
                   <div className="absolute inset-0 bg-gradient-to-r from-muted-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   <div className="relative flex items-center justify-between p-8">
-
                     <div className="flex flex-col gap-2">
 
                       <h3 className="font-display font-bold text-xl text-foreground transition-colors">
@@ -152,6 +144,15 @@ export default function CertificationsSection() {
                       <p className="text-sm text-muted-foreground">
                         {cert.issuer}
                       </p>
+
+                      {/* Internship Period */}
+                      <div className="mt-1 flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-terminal-green animate-pulse"></span>
+
+                        <span className="font-mono text-xs text-terminal-green tracking-wide">
+                          {cert.period}
+                        </span>
+                      </div>
 
                       <a
                         href={cert.link}
@@ -167,7 +168,6 @@ export default function CertificationsSection() {
                       </a>
 
                     </div>
-
                   </div>
                 </div>
               ))}
@@ -175,7 +175,6 @@ export default function CertificationsSection() {
           </div>
 
         </div>
-
       </div>
     </section>
   );
