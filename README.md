@@ -6,7 +6,7 @@ It showcases my projects, skills, education, and contact information.
 The portfolio is designed with a **modern developer-style UI** and highlights my interest in **Software Development, Data Structures & Algorithms, and problem solving**.
 
 ---
-
+ 
 ## 🌐 Live Website
 
 Portfolio Link:
