@@ -146,13 +146,11 @@ export default function CertificationsSection() {
                       </p>
 
                       {/* Internship Period */}
-                      <div className="mt-1 flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-terminal-green animate-pulse"></span>
-
-                        <span className="font-mono text-xs text-terminal-green tracking-wide">
-                          {cert.period}
-                        </span>
-                      </div>
+                      <div className="mt-1">
+  <span className="text-sm text-muted-foreground">
+    {cert.period}
+  </span>
+</div>
 
                       <a
                         href={cert.link}
