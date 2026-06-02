@@ -28,13 +28,13 @@ export default function CertificationsSection() {
     {
       name: "Java Developer Intern",
       issuer: "Kodbud IT Services and IT Consulting",
-      period: "May 2024 – Jun 2024",
+      period: "February 2026 – March 2026",
       link: "/certificates/javakodbud.pdf",
     },
     {
       name: "Summer Research Intern",
       issuer: "Symbiosis Institute of Technology Hyderabad",
-      period: "May 2025 – Jul 2025",
+      period: "May 2026 – Jul 2026 . Ongoing",
       link: "/certificates/sithofferletter.pdf",
     },
   ];
