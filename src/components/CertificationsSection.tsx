@@ -31,6 +31,11 @@ export default function CertificationsSection() {
       issuer: "Kodbud IT Services and IT Consulting",
       link: "/certificates/javakodbud.pdf",
     },
+    {
+      name: "Summer Research Intern",
+      issuer: "Symbiosis Institute of Technology Hyderabad",
+      link: "/certificates/sithofferletter.pdf",
+    },
   ];
 
   return (
