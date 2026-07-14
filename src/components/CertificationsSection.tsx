@@ -8,6 +8,16 @@ export default function CertificationsSection() {
       link: "/certificates/salesforce.pdf",
     },
     {
+      name: "Agentic AI Certified Foundations Associate",
+      issuer: "Oracle University",
+      link: "/certificates/oracle.pdf",
+    },
+      {
+      name: "Java Programming",
+      issuer: "GeeksforGeeks",
+      link: "/certificates/java.pdf",
+    },    
+    {
       name: "MongoDB",
       issuer: "GeeksforGeeks",
       link: "/certificates/mongodb.pdf",
