@@ -46,12 +46,7 @@ const codingProfiles = [
     link: "https://leetcode.com/sathvikrudam",
     logo: "https://cdn.simpleicons.org/leetcode",
   },
-  {
-    name: "LeetCode",
-    username: "chickenshawarma",
-    link: "https://leetcode.com/chickenshawarma",
-    logo: "https://cdn.simpleicons.org/leetcode",
-  },
+  
   {
     name: "CodeChef",
     username: "stvk_rdm",
