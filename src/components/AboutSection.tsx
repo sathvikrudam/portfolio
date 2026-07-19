@@ -13,7 +13,7 @@ const stats = [
   { value: "9.36", label: "CGPA" },
   { value: "5+", label: "Projects" },
   { value: "100+", label: "Problems Solved Across Platforms" },
-  { value: "3+", label: "ProgramminLanguages" },
+  { value: "3+", label: "Programming Languages" },
 ];
 
 const AboutSection = () => {
