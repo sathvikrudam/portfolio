@@ -324,7 +324,7 @@ const HeroSection = () => {
               {/* TOP FLOATING BADGE */}
               <div className="absolute -top-5 left-5 bg-background/95 dark:bg-card/95 backdrop-blur-md border border-border rounded-xl px-4 py-2.5 shadow-lg">
                 <span className="text-xs font-mono font-semibold text-foreground">
-                  VCE CSE '27
+                   CSE '27
                 </span>
               </div>
 
