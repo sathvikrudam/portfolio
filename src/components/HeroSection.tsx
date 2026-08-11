@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
-import profilePhoto from "@/assets/DP.PNG";
 
 const titles = [
   "Computer Science Engineering Student",
@@ -17,9 +16,9 @@ const HeroSection = () => {
 
   const heroRef = useRef<HTMLDivElement>(null);
 
-  /* =========================
-     TYPEWRITER
-  ========================= */
+  /* =========================================
+     TYPEWRITER EFFECT
+  ========================================= */
   useEffect(() => {
     const current = titles[titleIndex];
     let timeout: ReturnType<typeof setTimeout>;
@@ -44,9 +43,9 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [charIndex, deleting, titleIndex]);
 
-  /* =========================
-     MOUSE EFFECT
-  ========================= */
+  /* =========================================
+     MOUSE FOLLOWING EFFECT
+  ========================================= */
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (heroRef.current) {
@@ -71,9 +70,9 @@ const HeroSection = () => {
       ref={heroRef}
       className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden"
     >
-      {/* =========================
-          ANIMATED MOUSE GRADIENT
-      ========================= */}
+      {/* =========================================
+          ANIMATED GRADIENT BACKGROUND
+      ========================================= */}
       <div
         className="pointer-events-none absolute inset-0 opacity-30 blur-2xl transition-all duration-700 ease-out"
         style={{
@@ -85,26 +84,34 @@ const HeroSection = () => {
         }}
       />
 
-      {/* =========================
-          GRID BACKGROUND
-      ========================= */}
+      {/* =========================================
+          GRID PATTERN OVERLAY
+      ========================================= */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03] transition-transform duration-500 ease-out"
         style={{
           backgroundImage: `
-            linear-gradient(hsl(0 0% 50%) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(0 0% 50%) 1px, transparent 1px)
+            linear-gradient(
+              hsl(0 0% 50%) 1px,
+              transparent 1px
+            ),
+            linear-gradient(
+              90deg,
+              hsl(0 0% 50%) 1px,
+              transparent 1px
+            )
           `,
           backgroundSize: "60px 60px",
-          transform: `translate(${mousePos.x * 0.02}px, ${
-            mousePos.y * 0.02
-          }px)`,
+          transform: `translate(
+            ${mousePos.x * 0.02}px,
+            ${mousePos.y * 0.02}px
+          )`,
         }}
       />
 
-      {/* =========================
+      {/* =========================================
           FLOATING PARTICLES
-      ========================= */}
+      ========================================= */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {[...Array(5)].map((_, i) => (
           <div
@@ -121,17 +128,15 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* =========================
-          MAIN CONTENT
-      ========================= */}
+      {/* =========================================
+          MAIN CONTAINER
+      ========================================= */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-20">
-          
-          {/* ==================================================
+          {/* =========================================
               LEFT SIDE
-          ================================================== */}
-          <div className="flex-1 space-y-8 w-full">
-            
+          ========================================= */}
+          <div className="flex-1 w-full space-y-8">
             {/* STATUS BADGE */}
             <div className="inline-flex items-center gap-2 bg-card/90 dark:bg-white/5 border border-border rounded-full px-4 py-2 animate-fade-in-up shadow-lg backdrop-blur-sm ring-1 ring-black/10 dark:ring-white/15">
               <span className="relative flex h-2.5 w-2.5">
@@ -145,7 +150,7 @@ const HeroSection = () => {
               </span>
             </div>
 
-            {/* WHOAMI + NAME */}
+            {/* TERMINAL GREETING */}
             <div
               className="animate-fade-in-up"
               style={{
@@ -161,14 +166,14 @@ const HeroSection = () => {
               </p>
 
               <h1 className="font-display text-6xl md:text-8xl font-black tracking-tight leading-[0.95]">
-                {/* FIRST NAME */}
+                {/* FIRST LINE */}
                 <span className="inline-block hover:translate-x-1 transition-transform duration-300">
                   Sathvik
                 </span>
 
                 <br />
 
-                {/* LAST NAME */}
+                {/* SECOND LINE */}
                 <span className="group inline-block hover:translate-x-1 transition-transform duration-300">
                   Rudam
                   <span className="text-muted-foreground group-hover:text-terminal-green transition-colors duration-300">
@@ -225,7 +230,7 @@ const HeroSection = () => {
                 opacity: 0,
               }}
             >
-              {/* PROJECTS */}
+              {/* VIEW PROJECTS */}
               <a
                 href="#projects"
                 className="group bg-primary text-primary-foreground px-7 py-3.5 rounded-full text-sm font-medium hover:shadow-[0_0_30px_hsl(0_0%_100%/0.15)] transition-all duration-300 flex items-center gap-2"
@@ -276,7 +281,6 @@ const HeroSection = () => {
                 href="https://github.com/sathvikrudam"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="GitHub"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Github size={18} />
@@ -287,7 +291,6 @@ const HeroSection = () => {
                 href="https://www.linkedin.com/in/sathvikrudam/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Linkedin size={18} />
@@ -295,96 +298,45 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* ==================================================
-              RIGHT SIDE — PROFILE PHOTO
-          ================================================== */}
+          {/* =========================================
+              RIGHT SIDE — PHOTO
+          ========================================= */}
           <div
-            className="relative flex-shrink-0 w-full sm:w-[380px] lg:w-[400px] xl:w-[440px] animate-fade-in-up"
+            className="flex-1 w-full flex justify-center lg:justify-end animate-fade-in-up"
             style={{
               animationDelay: "0.4s",
               opacity: 0,
             }}
           >
-            <div className="relative">
+            <div className="relative w-full max-w-[430px]">
+              {/* PHOTO CARD */}
+              <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-2xl group">
+                <img
+                  src="/DP.PNG"
+                  alt="Sathvik Rudam"
+                  className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                />
 
-              {/* SUBTLE PHOTO GLOW */}
-              <div className="absolute -inset-5 rounded-3xl bg-foreground/[0.03] blur-2xl pointer-events-none" />
+                {/* SUBTLE IMAGE OVERLAY */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+              </div>
 
-              {/* PHOTO */}
-              <img
-                src={profilePhoto}
-                alt="Sathvik Rudam"
-                className="
-                  relative
-                  w-full
-                  aspect-[4/5]
-                  object-cover
-                  rounded-2xl
-                  border
-                  border-border
-                  shadow-2xl
-                  block
-                "
-              />
-
-              {/* =========================
-                  TOP LEFT BADGE
-              ========================= */}
-              <div
-                className="
-                  absolute
-                  -top-4
-                  -left-5
-                  bg-card
-                  border
-                  border-border
-                  rounded-xl
-                  px-4
-                  py-2.5
-                  shadow-lg
-                  backdrop-blur-sm
-                  flex
-                  items-center
-                  gap-2
-                  z-10
-                "
-              >
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-terminal-green opacity-60 animate-ping" />
-
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-terminal-green" />
-                </span>
-
-                <span className="text-xs font-mono text-muted-foreground whitespace-nowrap">
-                  CSE '27 Student
+              {/* TOP FLOATING BADGE */}
+              <div className="absolute -top-5 left-5 bg-background/95 dark:bg-card/95 backdrop-blur-md border border-border rounded-xl px-4 py-2.5 shadow-lg">
+                <span className="text-xs font-mono font-semibold text-foreground">
+                  SDE '27
                 </span>
               </div>
 
-              {/* =========================
-                  BOTTOM RIGHT BADGE
-              ========================= */}
-              <div
-                className="
-                  absolute
-                  -bottom-4
-                  -right-5
-                  bg-card
-                  border
-                  border-border
-                  rounded-xl
-                  px-4
-                  py-2.5
-                  shadow-lg
-                  backdrop-blur-sm
-                  flex
-                  items-center
-                  gap-2
-                  z-10
-                "
-              >
-                <span className="w-2.5 h-2.5 rounded-full bg-terminal-green" />
+              {/* BOTTOM FLOATING BADGE */}
+              <div className="absolute -bottom-5 right-[-10px] sm:right-[-20px] bg-background/95 dark:bg-card/95 backdrop-blur-md border border-border rounded-xl px-4 py-2.5 shadow-lg">
+                <span className="flex items-center gap-2 text-xs font-mono text-foreground">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-terminal-green opacity-75 animate-ping" />
 
-                <span className="text-xs font-mono text-muted-foreground whitespace-nowrap">
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-terminal-green" />
+                  </span>
+
                   Java & DSA
                 </span>
               </div>
@@ -393,9 +345,9 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* =========================
-          PARTICLE ANIMATION
-      ========================= */}
+      {/* =========================================
+          ANIMATIONS
+      ========================================= */}
       <style>{`
         @keyframes float-particle {
           0% {
