@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg"; // keep for future use
+import profilePhoto from "@/assets/DP.PNG";
 
 const titles = [
   "Computer Science Engineering Student",
@@ -10,7 +10,6 @@ const titles = [
 ];
 
 const HeroSection = () => {
-
   const [titleIndex, setTitleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
@@ -18,58 +17,63 @@ const HeroSection = () => {
 
   const heroRef = useRef<HTMLDivElement>(null);
 
+  /* =========================
+     TYPEWRITER
+  ========================= */
   useEffect(() => {
-
     const current = titles[titleIndex];
     let timeout: ReturnType<typeof setTimeout>;
 
     if (!deleting && charIndex < current.length) {
-      timeout = setTimeout(() => setCharIndex((c) => c + 1), 60);
+      timeout = setTimeout(() => {
+        setCharIndex((c) => c + 1);
+      }, 60);
     } else if (!deleting && charIndex === current.length) {
-      timeout = setTimeout(() => setDeleting(true), 2000);
+      timeout = setTimeout(() => {
+        setDeleting(true);
+      }, 2000);
     } else if (deleting && charIndex > 0) {
-      timeout = setTimeout(() => setCharIndex((c) => c - 1), 30);
+      timeout = setTimeout(() => {
+        setCharIndex((c) => c - 1);
+      }, 30);
     } else if (deleting && charIndex === 0) {
       setDeleting(false);
       setTitleIndex((i) => (i + 1) % titles.length);
     }
 
     return () => clearTimeout(timeout);
-
   }, [charIndex, deleting, titleIndex]);
 
+  /* =========================
+     MOUSE EFFECT
+  ========================= */
   useEffect(() => {
-
     const handleMouseMove = (e: MouseEvent) => {
-
       if (heroRef.current) {
-
         const rect = heroRef.current.getBoundingClientRect();
 
         setMousePos({
           x: ((e.clientX - rect.left) / rect.width) * 100,
           y: ((e.clientY - rect.top) / rect.height) * 100,
         });
-
       }
-
     };
 
     window.addEventListener("mousemove", handleMouseMove);
 
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   return (
-
     <section
       ref={heroRef}
       className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden"
     >
-
-      {/* Animated gradient background */}
-
+      {/* =========================
+          ANIMATED MOUSE GRADIENT
+      ========================= */}
       <div
         className="pointer-events-none absolute inset-0 opacity-30 blur-2xl transition-all duration-700 ease-out"
         style={{
@@ -81,220 +85,332 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Grid pattern overlay */}
-
+      {/* =========================
+          GRID BACKGROUND
+      ========================= */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03] transition-transform duration-500 ease-out"
         style={{
-          backgroundImage: `linear-gradient(hsl(0 0% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 50%) 1px, transparent 1px)`,
+          backgroundImage: `
+            linear-gradient(hsl(0 0% 50%) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(0 0% 50%) 1px, transparent 1px)
+          `,
           backgroundSize: "60px 60px",
-          transform: `translate(${mousePos.x * 0.02}px, ${mousePos.y * 0.02}px)`
+          transform: `translate(${mousePos.x * 0.02}px, ${
+            mousePos.y * 0.02
+          }px)`,
         }}
       />
 
-      {/* Floating particles */}
-
+      {/* =========================
+          FLOATING PARTICLES
+      ========================= */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-
         {[...Array(5)].map((_, i) => (
-
           <div
             key={i}
             className="absolute w-1 h-1 rounded-full bg-muted-foreground/10"
             style={{
               left: `${15 + i * 18}%`,
               top: `${20 + i * 12}%`,
-              animation: `float-particle ${4 + i}s ease-in-out infinite alternate`,
+              animation: `float-particle ${
+                4 + i
+              }s ease-in-out infinite alternate`,
             }}
           />
-
         ))}
-
       </div>
 
+      {/* =========================
+          MAIN CONTENT
+      ========================= */}
       <div className="container mx-auto px-6 relative z-10">
-
-        <div className="flex flex-col items-start gap-16">
-
-          <div className="flex-1 space-y-8">
-
-            {/* Status badge */}
-
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-20">
+          
+          {/* ==================================================
+              LEFT SIDE
+          ================================================== */}
+          <div className="flex-1 space-y-8 w-full">
+            
+            {/* STATUS BADGE */}
             <div className="inline-flex items-center gap-2 bg-card/90 dark:bg-white/5 border border-border rounded-full px-4 py-2 animate-fade-in-up shadow-lg backdrop-blur-sm ring-1 ring-black/10 dark:ring-white/15">
-
               <span className="relative flex h-2.5 w-2.5">
-
                 <span className="absolute inline-flex h-full w-full rounded-full bg-terminal-green opacity-75 animate-ping" />
 
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-terminal-green" />
-
               </span>
 
               <span className="text-xs font-mono text-muted-foreground">
                 Available for opportunities
               </span>
-
             </div>
 
-            {/* Terminal greeting */}
-
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.2s", opacity: 0 }}>
-
+            {/* WHOAMI + NAME */}
+            <div
+              className="animate-fade-in-up"
+              style={{
+                animationDelay: "0.2s",
+                opacity: 0,
+              }}
+            >
               <p className="text-sm text-muted-foreground font-mono mb-4">
-                <span className="text-green-600 dark:text-green-400 drop-shadow-[0_0_6px_rgba(34,197,94,0.9)]">$</span> whoami
+                <span className="text-green-600 dark:text-green-400 drop-shadow-[0_0_6px_rgba(34,197,94,0.9)]">
+                  $
+                </span>{" "}
+                whoami
               </p>
 
               <h1 className="font-display text-6xl md:text-8xl font-black tracking-tight leading-[0.95]">
-
-                {/* FIRST LINE */}
+                {/* FIRST NAME */}
                 <span className="inline-block hover:translate-x-1 transition-transform duration-300">
                   Sathvik
                 </span>
 
                 <br />
 
-                {/* SECOND LINE WITH DOT EFFECT */}
+                {/* LAST NAME */}
                 <span className="group inline-block hover:translate-x-1 transition-transform duration-300">
-
                   Rudam
-
                   <span className="text-muted-foreground group-hover:text-terminal-green transition-colors duration-300">
                     .
                   </span>
-
                 </span>
-
               </h1>
-
             </div>
 
-            {/* Typewriter */}
-
+            {/* TYPEWRITER */}
             <div
               className="h-10 flex items-center font-mono text-sm md:text-base bg-card/50 border border-border rounded-lg px-4 py-2 max-w-lg animate-fade-in-up"
-              style={{ animationDelay: "0.35s", opacity: 0 }}
+              style={{
+                animationDelay: "0.35s",
+                opacity: 0,
+              }}
             >
-
-              <span className="text-terminal-green mr-2 select-none">&gt;</span>
+              <span className="text-terminal-green mr-2 select-none">
+                &gt;
+              </span>
 
               <span className="text-muted-foreground">
                 {titles[titleIndex].slice(0, charIndex)}
               </span>
 
               <span className="cursor-blink ml-0.5 inline-block w-2 h-5 bg-foreground/80" />
-
             </div>
 
-            {/* Description */}
-
+            {/* DESCRIPTION */}
             <p
               className="text-muted-foreground leading-relaxed max-w-xl text-sm md:text-base animate-fade-in-up"
-              style={{ animationDelay: "0.5s", opacity: 0 }}
+              style={{
+                animationDelay: "0.5s",
+                opacity: 0,
+              }}
             >
-
               A Computer Science Engineering student with a strong passion
-              for software development and problem solving. Specializing in
-
-              <span className="text-foreground font-medium"> Java programming </span>
-
-               and
-
-              <span className="text-foreground font-medium"> Data Structures & Algorithms</span>.
-
+              for software development and problem solving. Specializing in{" "}
+              <span className="text-foreground font-medium">
+                Java programming
+              </span>{" "}
+              and{" "}
+              <span className="text-foreground font-medium">
+                Data Structures & Algorithms
+              </span>
+              .
             </p>
 
-            {/* CTA Buttons */}
-
+            {/* CTA BUTTONS */}
             <div
               className="flex flex-wrap gap-3 pt-2 animate-fade-in-up"
-              style={{ animationDelay: "0.65s", opacity: 0 }}
+              style={{
+                animationDelay: "0.65s",
+                opacity: 0,
+              }}
             >
-
+              {/* PROJECTS */}
               <a
                 href="#projects"
                 className="group bg-primary text-primary-foreground px-7 py-3.5 rounded-full text-sm font-medium hover:shadow-[0_0_30px_hsl(0_0%_100%/0.15)] transition-all duration-300 flex items-center gap-2"
               >
-
                 View Projects
 
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-
+                <ArrowRight
+                  size={16}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
               </a>
 
+              {/* CONTACT */}
               <a
                 href="#contact"
                 className="group border border-border px-7 py-3.5 rounded-full text-sm font-medium text-foreground hover:bg-card hover:border-muted-foreground/30 transition-all duration-300 flex items-center gap-2"
               >
-
                 <Mail size={16} />
                 Contact Me
-
               </a>
 
+              {/* RESUME */}
               <a
                 href="/sathvikrudam.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group border border-border px-7 py-3.5 rounded-full text-sm font-medium text-muted-foreground hover:bg-card hover:text-foreground hover:border-muted-foreground/30 transition-all duration-300 flex items-center gap-2"
               >
-
                 <Download size={16} />
                 Resume
-
               </a>
-
             </div>
 
-            {/* Social links */}
-
+            {/* SOCIAL LINKS */}
             <div
               className="flex items-center gap-4 pt-2 animate-fade-in-up"
-              style={{ animationDelay: "0.8s", opacity: 0 }}
+              style={{
+                animationDelay: "0.8s",
+                opacity: 0,
+              }}
             >
-
               <span className="text-xs font-mono text-muted-foreground">
                 find_me →
               </span>
 
+              {/* GITHUB */}
               <a
                 href="https://github.com/sathvikrudam"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Github size={18} />
               </a>
 
+              {/* LINKEDIN */}
               <a
                 href="https://www.linkedin.com/in/sathvikrudam/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Linkedin size={18} />
               </a>
-
             </div>
-
           </div>
 
-        </div>
+          {/* ==================================================
+              RIGHT SIDE — PROFILE PHOTO
+          ================================================== */}
+          <div
+            className="relative flex-shrink-0 w-full sm:w-[380px] lg:w-[400px] xl:w-[440px] animate-fade-in-up"
+            style={{
+              animationDelay: "0.4s",
+              opacity: 0,
+            }}
+          >
+            <div className="relative">
 
+              {/* SUBTLE PHOTO GLOW */}
+              <div className="absolute -inset-5 rounded-3xl bg-foreground/[0.03] blur-2xl pointer-events-none" />
+
+              {/* PHOTO */}
+              <img
+                src={profilePhoto}
+                alt="Sathvik Rudam"
+                className="
+                  relative
+                  w-full
+                  aspect-[4/5]
+                  object-cover
+                  rounded-2xl
+                  border
+                  border-border
+                  shadow-2xl
+                  block
+                "
+              />
+
+              {/* =========================
+                  TOP LEFT BADGE
+              ========================= */}
+              <div
+                className="
+                  absolute
+                  -top-4
+                  -left-5
+                  bg-card
+                  border
+                  border-border
+                  rounded-xl
+                  px-4
+                  py-2.5
+                  shadow-lg
+                  backdrop-blur-sm
+                  flex
+                  items-center
+                  gap-2
+                  z-10
+                "
+              >
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-terminal-green opacity-60 animate-ping" />
+
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-terminal-green" />
+                </span>
+
+                <span className="text-xs font-mono text-muted-foreground whitespace-nowrap">
+                  CSE '27 Student
+                </span>
+              </div>
+
+              {/* =========================
+                  BOTTOM RIGHT BADGE
+              ========================= */}
+              <div
+                className="
+                  absolute
+                  -bottom-4
+                  -right-5
+                  bg-card
+                  border
+                  border-border
+                  rounded-xl
+                  px-4
+                  py-2.5
+                  shadow-lg
+                  backdrop-blur-sm
+                  flex
+                  items-center
+                  gap-2
+                  z-10
+                "
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-terminal-green" />
+
+                <span className="text-xs font-mono text-muted-foreground whitespace-nowrap">
+                  Java & DSA
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
+      {/* =========================
+          PARTICLE ANIMATION
+      ========================= */}
       <style>{`
-
         @keyframes float-particle {
-          0% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
-          100% { transform: translateY(-30px) translateX(15px); opacity: 0.5; }
+          0% {
+            transform: translateY(0px) translateX(0px);
+            opacity: 0.2;
+          }
+
+          100% {
+            transform: translateY(-30px) translateX(15px);
+            opacity: 0.5;
+          }
         }
-
       `}</style>
-
     </section>
-
   );
-
 };
 
 export default HeroSection;
