@@ -71,6 +71,12 @@ const codingProfiles = [
     link: "https://codeforces.com/profile/sathvikrudam",
     logo: "https://cdn.simpleicons.org/codeforces",
   },
+  {
+  name: "HackerEarth",
+  username: "rudamsathvik",
+  link: "https://www.hackerearth.com/@rudamsathvik/",
+  logo: "https://cdn.simpleicons.org/hackerearth",
+},
 ];
 
 const SkillsSection = () => {
