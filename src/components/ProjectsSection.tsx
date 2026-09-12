@@ -15,7 +15,7 @@ const projects = [
     title: "CollabDocs: Write together, in real time.",
     description:
       "A real-time collaborative document editing platform that allows multiple users to work on the same document simultaneously with live updates.",
-    tags: ["Real-time", "WebSockets", "JavaScript", "Collaboration"],
+    tags: ["Real-time", "WebSockets", "JavaScript", "MongoDB"],
     color: "from-muted-foreground/5 to-transparent",
     number: "02",
     link: "https://collabdocs.sathvikrudam.online",
