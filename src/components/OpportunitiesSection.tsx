@@ -2,7 +2,7 @@ import { Briefcase, ArrowRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const roles = [
-  { title: "Java Full Stack Developer", icon: "☕" },
+  { title: "Fullstack Java Developer", icon: "☕" },
   { title: "Software Developer", icon: "💻" },
   { title: "Backend Developer", icon: "⚙️" },
   { title: "Frontend Developer", icon: "🚀" },
