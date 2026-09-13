@@ -73,8 +73,8 @@ const codingProfiles = [
   },
   {
   name: "HackerEarth",
-  username: "rudamsathvik",
-  link: "https://www.hackerearth.com/@rudamsathvik/",
+  username: "sathvikrudam",
+  link: "https://www.hackerearth.com/@sathvikrudam/",
   logo: "https://cdn.simpleicons.org/hackerearth",
 },
 ];
