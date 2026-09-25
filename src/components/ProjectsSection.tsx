@@ -3,14 +3,14 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const projects = [
   {
-  title: "Flight Ticket Booking System",
-  description:
-    "A Java-based flight reservation web application that allows users to register, search flights, book tickets, and receive booking confirmations, with admin features for flight management.",
-  tags: ["Java", "Servlets", "JSP", "JDBC", "MySQL", "Tomcat"],
-  color: "from-muted-foreground/10 to-transparent",
-  number: "01",
-  link: "https://github.com/sathvikrudam/flight-ticket-booking",
-},
+    title: "Flight Ticket Booking System",
+    description:
+      "A Java-based flight reservation web application that allows users to register, search flights, book tickets, and receive booking confirmations, with admin features for flight management.",
+    tags: ["Java", "Servlets", "JSP", "JDBC", "MySQL", "Tomcat"],
+    color: "from-muted-foreground/10 to-transparent",
+    number: "01",
+    link: "https://github.com/sathvikrudam/flight-ticket-booking",
+  },
   {
     title: "CollabDocs: Write together, in real time.",
     description:
@@ -47,8 +47,16 @@ const projects = [
     number: "05",
     link: "https://github.com/sathvikrudam/GroceryApp",
   },
+  {
+    title: "StudyForge: AI Study Assistant",
+    description:
+      "An AI-powered study assistant that transforms user-provided topics into structured study materials such as summaries, key concepts, flashcards, and quizzes using a real LLM API with validated JSON responses.",
+    tags: ["React", "JavaScript", "Gemini API", "Express.js", "AI"],
+    color: "from-muted-foreground/10 to-transparent",
+    number: "06",
+    link: "https://flamproject.sathvikrudam.online",
+  },
 ];
-
 const ProjectsSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
